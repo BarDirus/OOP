@@ -1,4 +1,4 @@
-package ru.nsu.shadrina;
+package ru.nsu.shirokov;
 
 import org.junit.jupiter.api.Test;
 
