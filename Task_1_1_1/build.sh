@@ -31,7 +31,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # 4. Запуск тестов с использованием JaCoCo
-java -javaagent:libs/jacocoagent.jar=destfile=build/jacoco/test.exec \
+java -javaagent:libs/lib/jacocoagent.jar=destfile=build/jacoco/test.exec \
   -jar C:/Users/User/.jdks/openjdk-22.0.2/lib/junit-platform-console-standalone-1.11.0.jar \
   --class-path build/classes/java/main/ru/nsu/shirokov \
   --scan-classpath
@@ -44,7 +44,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # 5. Генерация отчета о покрытии кода
-java -jar libs/jacococli.jar report build/jacoco/test.exec \
+java -jar libs/lib/jacococli.jar report build/jacoco/test.exec \
     --classfiles build/classes/java/main \
     --sourcefiles src/main/java \
     --html build/reports/jacoco \
@@ -56,6 +56,15 @@ if [ $? -ne 0 ]; then
   read
   exit 1
 fi
+# 6. Запуск приложения (опционально)
+java -jar HeapSort.jar
 
+# Проверяем, завершился ли запуск приложения успешно
+if [ $? -ne 0 ]; then
+  echo "Ошибка при запуске приложения"
+  read
+  exit 1
+fi
 # 7. Сообщение об успешной сборке
+read
 echo "Сборка завершена успешно"
