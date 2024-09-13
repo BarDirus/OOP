@@ -1,4 +1,4 @@
-package ru.nsu.shadrina;
+package ru.nsu.shirokov;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.junit.jupiter.api.Test;
