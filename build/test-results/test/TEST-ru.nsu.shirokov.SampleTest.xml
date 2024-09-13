@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.shirokov.SampleTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-09-13T13:55:24" hostname="DESKTOP-TM87O7H" time="0.047">
+  <properties/>
+  <testcase name="doINeedToCheckDefaultConstructor()" classname="ru.nsu.shirokov.SampleTest" time="0.028"/>
+  <testcase name="checkMain()" classname="ru.nsu.shirokov.SampleTest" time="0.013"/>
+  <testcase name="checkPrinting()" classname="ru.nsu.shirokov.SampleTest" time="0.001"/>
+  <system-out><![CDATA[Hello world!
+Hello world!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
