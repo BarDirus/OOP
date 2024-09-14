@@ -57,11 +57,5 @@ public class HeapSort {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        int[] arr = {5, 4, 3, 2, 1};
-        HeapSort heapSort = new HeapSort();
-        heapSort.sort(arr);
-        System.out.println("Отсортированный массив:");
-        heapSort.printArray(arr);
-    }
+
 }
