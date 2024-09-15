@@ -1,5 +1,7 @@
 package ru.nsu.shirokov;
 
+import javax.annotation.processing.Generated;
+
 public class HeapSort {
 
     public void sort(int[] arr) {
@@ -56,12 +58,11 @@ public class HeapSort {
         }
         System.out.println();
     }
-
+    @Generated("JacocoIgnore")
     public static void main(String[] args) {
         int[] arr = {5, 4, 3, 2, 1};
         HeapSort heapSort = new HeapSort();
         heapSort.sort(arr);
-        System.out.println("Отсортированный массив:");
         heapSort.printArray(arr);
     }
 }

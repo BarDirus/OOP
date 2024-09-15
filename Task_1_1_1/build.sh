@@ -11,15 +11,14 @@ if [ $? -ne 0 ]; then
 fi
 
 # 2. Компиляция исходного кода
-javac -d build/classes/java/main src/main/java/ru/nsu/shirokov/HeapSort.java
-
+javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/HeapSort.java  -d ./build/classes/java/main
+javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/HeapSort.java ./src/test/java/ru/nsu/shirokov/HeapSortTest.java  -d ./build/classes/java/test
 # Проверяем, завершилась ли компиляция успешно
 if [ $? -ne 0 ]; then
   echo "Ошибка при компиляции исходного кода"
   read
   exit 1
 fi
-
 # 3. Создание JAR-файла
 jar -cmf manifest.mf HeapSort.jar -C build/classes/java/main .
 
@@ -32,8 +31,8 @@ fi
 
 # 4. Запуск тестов с использованием JaCoCo
 java -javaagent:libs/lib/jacocoagent.jar=destfile=build/jacoco/test.exec \
-  -jar C:/Users/User/.jdks/openjdk-22.0.2/lib/junit-platform-console-standalone-1.11.0.jar \
-  --class-path build/classes/java/main/ru/nsu/shirokov \
+  -jar libs/junit-platform-console-standalone-1.11.0.jar \
+  --class-path build/classes/java/test \
   --scan-classpath
 
 # Проверяем, завершился ли запуск тестов успешно
@@ -45,7 +44,7 @@ fi
 
 # 5. Генерация отчета о покрытии кода
 java -jar libs/lib/jacococli.jar report build/jacoco/test.exec \
-    --classfiles build/classes/java/main \
+    --classfiles build \
     --sourcefiles src/main/java \
     --html build/reports/jacoco \
     --name "Coverage Report"
