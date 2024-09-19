@@ -8,8 +8,14 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Тесты для проверки реализации пирамидальной сортировки.
+ */
 public class HeapSortTest {
 
+    /**
+     * Тест сортировки массива с уникальными элементами.
+     */
     @Test
     public void testHeapSortWithUniqueElements() {
         HeapSort heapSort = new HeapSort();
@@ -19,6 +25,9 @@ public class HeapSortTest {
         assertArrayEquals(expected, input);
     }
 
+    /**
+     * Тест сортировки массива с повторяющимися элементами.
+     */
     @Test
     public void testHeapSortWithDuplicates() {
         HeapSort heapSort = new HeapSort();
@@ -28,6 +37,9 @@ public class HeapSortTest {
         assertArrayEquals(expected, input);
     }
 
+    /**
+     * Тест сортировки уже отсортированного массива.
+     */
     @Test
     public void testHeapSortWithAlreadySortedArray() {
         HeapSort heapSort = new HeapSort();
@@ -37,6 +49,9 @@ public class HeapSortTest {
         assertArrayEquals(expected, input);
     }
 
+    /**
+     * Тест сортировки пустого массива.
+     */
     @Test
     public void testHeapSortWithEmptyArray() {
         HeapSort heapSort = new HeapSort();
@@ -46,6 +61,9 @@ public class HeapSortTest {
         assertArrayEquals(expected, input);
     }
 
+    /**
+     * Тест сортировки массива с одним элементом.
+     */
     @Test
     public void testHeapSortWithSingleElementArray() {
         HeapSort heapSort = new HeapSort();
@@ -55,6 +73,9 @@ public class HeapSortTest {
         assertArrayEquals(expected, input);
     }
 
+    /**
+     * Тест сортировки большого массива для проверки производительности и корректности.
+     */
     @Test
     public void testHeapSortWithLargeArray() {
         HeapSort heapSort = new HeapSort();
@@ -62,12 +83,17 @@ public class HeapSortTest {
         for (int i = 0; i < input.length; i++) {
             input[i] = input.length - i;
         }
+
         heapSort.sort(input);
+
+        // Проверка на корректность сортировки
         for (int i = 1; i < input.length; i++) {
             assertTrue(input[i - 1] <= input[i]);
         }
     }
-
+    /**
+     * Тест для проверки корректности вывода.
+     */
     @Test
     public void testPrintArray() {
         // Подготовка к перехвату вывода
@@ -82,7 +108,9 @@ public class HeapSortTest {
         assertEquals(expectedOutput, result);
         System.setOut(originalOut);
     }
-
+    /**
+     * Тест для проверки корректности main-a.
+     */
     @Test
     public void testMainMethod() {
         // Подготовка к перехвату вывода
