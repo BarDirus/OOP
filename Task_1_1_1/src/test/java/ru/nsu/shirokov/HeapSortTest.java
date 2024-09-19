@@ -1,12 +1,12 @@
 package ru.nsu.shirokov;
 
-import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayOutputStream;
-
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Тесты для проверки реализации пирамидальной сортировки.
