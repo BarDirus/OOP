@@ -103,7 +103,7 @@ public class HeapSortTest {
         int[] input = {1, 2, 3, 4, 5};
         HeapSort heapSort = new HeapSort();
         heapSort.printArray(input);
-        String expectedOutput = ("1 2 3 4 5 " + WSystem.lineSeparator());
+        String expectedOutput = ("1 2 3 4 5 " + System.lineSeparator());
         String result = outputStream.toString();
         PrintStream originalOut = System.out;
         assertEquals(expectedOutput, result);
