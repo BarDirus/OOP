@@ -117,10 +117,10 @@ public class HeapSortTest {
     public void testMainMethod() {
         // Подготовка к перехвату вывода
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
         HeapSort.main(new String[]{});
         String expectedOutput = ("1 2 3 4 5 " + System.lineSeparator());
+        PrintStream originalOut = System.out;
         assertEquals(expectedOutput, outputStream.toString());
         System.setOut(originalOut);
     }

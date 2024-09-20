@@ -1,5 +1,7 @@
 package ru.nsu.shirokov;
-
+/**
+ * Класс, реализующий пирамидальную сортировку.
+ */
 public class HeapSort {
 
     /**
@@ -43,14 +45,16 @@ public class HeapSort {
             heapify(arr, n, largest);
         }
     }
-
-
+    /**
+     * Вывод массива.
+     */
     public void printArray(int[] arr) {
         for (int j : arr) {
             System.out.print(j + " ");
         }
         System.out.println();
     }
+
     public static void main(String[] args) {
         int[] arr = {5, 4, 3, 2, 1};
         HeapSort heapSort = new HeapSort();
