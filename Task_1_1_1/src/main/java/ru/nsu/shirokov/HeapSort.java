@@ -2,6 +2,9 @@ package ru.nsu.shirokov;
 
 public class HeapSort {
 
+    /**
+     * Сортирует переданный массив чисел с использованием алгоритма пирамидальной сортировки.
+     */
     public void sort(int[] arr) {
         int n = arr.length;
 
@@ -20,8 +23,10 @@ public class HeapSort {
             heapify(arr, i, 0);
         }
     }
-
-    void heapify(int[] arr, int n, int i) {
+/**
+ * Преобразует поддерево с корневым узлом i в кучу, предполагая, что поддеревья этого узла уже являются кучами.
+ */
+ void heapify(int[] arr, int n, int i) {
         int largest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;

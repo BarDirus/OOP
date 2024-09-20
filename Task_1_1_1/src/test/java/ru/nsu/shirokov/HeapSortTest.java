@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * Тесты для проверки реализации пирамидальной сортировки.
  */
@@ -90,6 +91,7 @@ public class HeapSortTest {
             assertTrue(input[i - 1] <= input[i]);
         }
     }
+
     /**
      * Тест для проверки корректности вывода.
      */
@@ -97,16 +99,17 @@ public class HeapSortTest {
     public void testPrintArray() {
         // Подготовка к перехвату вывода
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
         int[] input = {1, 2, 3, 4, 5};
         HeapSort heapSort = new HeapSort();
         heapSort.printArray(input);
-        String expectedOutput = ("1 2 3 4 5 "+System.lineSeparator());
+        String expectedOutput = ("1 2 3 4 5 " + WSystem.lineSeparator());
         String result = outputStream.toString();
+        PrintStream originalOut = System.out;
         assertEquals(expectedOutput, result);
         System.setOut(originalOut);
     }
+
     /**
      * Тест для проверки корректности main-a.
      */
@@ -117,7 +120,7 @@ public class HeapSortTest {
         PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
         HeapSort.main(new String[]{});
-        String expectedOutput = ("1 2 3 4 5 "+System.lineSeparator());
+        String expectedOutput = ("1 2 3 4 5 " + System.lineSeparator());
         assertEquals(expectedOutput, outputStream.toString());
         System.setOut(originalOut);
     }
