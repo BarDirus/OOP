@@ -86,10 +86,7 @@ public class HeapSortTest {
         for (int i = 0; i < input.length; i++) {
             input[i] = input.length - i;
         }
-
         heapSort.sort(input);
-
-        // Проверка на корректность сортировки
         for (int i = 1; i < input.length; i++) {
             assertTrue(input[i - 1] <= input[i]);
         }
@@ -100,7 +97,6 @@ public class HeapSortTest {
      */
     @Test
     public void testPrintArray() {
-        // Подготовка к перехвату вывода
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
         int[] input = {1, 2, 3, 4, 5};
@@ -118,7 +114,6 @@ public class HeapSortTest {
      */
     @Test
     public void testMainMethod() {
-        // Подготовка к перехвату вывода
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
         HeapSort.main(new String[]{});
