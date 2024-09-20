@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Генерация документации с помощью javadoc
-javadoc -d doc src/main/java/ru/nsu/shirokov/HeapSort.java
+javadoc -d doc src/main/java/ru/nsu/shirokov/BlackJack.java
 
 # Проверяем, завершилась ли команда успешно
 if [ $? -ne 0 ]; then
@@ -11,8 +11,8 @@ if [ $? -ne 0 ]; then
 fi
 
 # 2. Компиляция исходного кода
-javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/HeapSort.java  -d ./build/classes/java/main
-javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/HeapSort.java ./src/test/java/ru/nsu/shirokov/HeapSortTest.java  -d ./build/classes/java/test
+javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/BlackJack.java  -d ./build/classes/java/main
+javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/BlackJack.java ./src/test/java/ru/nsu/shirokov/BJTest.java  -d ./build/classes/java/test
 # Проверяем, завершилась ли компиляция успешно
 if [ $? -ne 0 ]; then
   echo "Ошибка при компиляции исходного кода"
@@ -20,7 +20,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 # 3. Создание JAR-файла
-jar -cmf manifest.mf HeapSort.jar -C build/classes/java/main .
+jar -cmf manifest.mf BlackJack.jar -C build/classes/java/main .
 
 # Проверяем, завершилось ли создание JAR-файла успешно
 if [ $? -ne 0 ]; then
@@ -56,7 +56,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 # 6. Запуск приложения (опционально)
-java -jar HeapSort.jar
+java -jar BlackJack.jar
 
 # Проверяем, завершился ли запуск приложения успешно
 if [ $? -ne 0 ]; then
