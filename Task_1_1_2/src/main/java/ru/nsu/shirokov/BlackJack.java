@@ -1,55 +1,105 @@
 package ru.nsu.shirokov;
 
-public class HeapSort {
+import java.util.Scanner;
 
-    public void sort(int[] arr) {
-        int n = arr.length;
+public class BlackJack {
+    private final Deck deck;
+    private final Player player;
+    private final Player dealer;
+    private final Scanner scanner;
 
+    public BlackJack() {
+        deck = new Deck();
+        deck.shuffle();
+        player = new Player();
+        dealer = new Player();
+        scanner = new Scanner(System.in);
+    }
 
-        for (int i = n / 2 - 1; i >= 0; i--) {
-            heapify(arr, n, i);
+    public void playGame() {
+        System.out.println("Добро пожаловать в Блэкджэк!");
+
+        boolean gameOver = false;
+        int round = 1;
+
+        while (!gameOver) {
+            System.out.println("\nРаунд " + round);
+            playRound();
+            round++;
+            System.out.println("Введите '0', чтобы выйти, или любое другое число для продолжения.");
+            gameOver = scanner.nextInt() == 0;
         }
 
+        System.out.println("Спасибо за игру!");
+    }
 
-        for (int i = n - 1; i > 0; i--) {
+    private void playRound() {
+        player.addCard(deck.drawCard());
+        player.addCard(deck.drawCard());
+        dealer.addCard(deck.drawCard());
+        dealer.addCard(deck.drawCard());
 
-            int temp = arr[0];
-            arr[0] = arr[i];
-            arr[i] = temp;
+        System.out.println("Ваши карты: " + player.getHand() + " > " + player.getScore());
+        System.out.println("Карты дилера: " + dealer.getHand().get(0) + ", <закрытая карта>");
 
-            heapify(arr, i, 0);
+        if (player.hasBlackjack()) {
+            System.out.println("У вас Блэкджек! Вы победили!");
+            return;
+        }
+
+        playerTurn();
+        if (!player.isBust()) {
+            dealerTurn();
+        }
+
+        determineWinner();
+    }
+
+    private void playerTurn() {
+        while (true) {
+            System.out.println("Введите '1', чтобы взять карту, или '0', чтобы остановиться.");
+            int choice = scanner.nextInt();
+            if (choice == 1) {
+                player.addCard(deck.drawCard());
+                System.out.println("Ваши карты: " + player.getHand() + " > " + player.getScore());
+                if (player.isBust()) {
+                    System.out.println("Вы проиграли, набрав больше 21 очка.");
+                    break;
+                }
+            } else {
+                break;
+            }
         }
     }
 
-    void heapify(int[] arr, int n, int i) {
-        int largest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
-        if (left < n && arr[left] > arr[largest]) {
-            largest = left;
+    private void dealerTurn() {
+        System.out.println("Карты дилера: " + dealer.getHand());
+        while (dealer.getScore() < 17) {
+            dealer.addCard(deck.drawCard());
+            System.out.println("Дилер открыл карту: " + dealer.getHand() + " > " + dealer.getScore());
         }
-        if (right < n && arr[right] > arr[largest]) {
-            largest = right;
-        }
-        if (largest != i) {
-            int swap = arr[i];
-            arr[i] = arr[largest];
-            arr[largest] = swap;
-            heapify(arr, n, largest);
+
+        if (dealer.isBust()) {
+            System.out.println("Дилер проиграл, набрав больше 21 очка.");
         }
     }
 
-
-    public void printArray(int[] arr) {
-        for (int j : arr) {
-            System.out.print(j + " ");
+    private void determineWinner() {
+        if (player.isBust()) {
+            System.out.println("Дилер выиграл!");
+        } else if (dealer.isBust()) {
+            System.out.println("Вы выиграли!");
+        } else if (player.getScore() > dealer.getScore()) {
+            System.out.println("Вы выиграли раунд!");
+        } else if (player.getScore() < dealer.getScore()) {
+            System.out.println("Дилер выиграл раунд!");
+        } else {
+            System.out.println("Ничья!");
         }
-        System.out.println();
     }
+
     public static void main(String[] args) {
-        int[] arr = {5, 4, 3, 2, 1};
-        HeapSort heapSort = new HeapSort();
-        heapSort.sort(arr);
-        heapSort.printArray(arr);
+        BlackJack game = new BlackJack();
+        game.playGame();
     }
 }
