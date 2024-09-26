@@ -50,8 +50,17 @@ java -jar libs/lib/jacococli.jar report build/jacoco/test.exec \
     --name "Coverage Report"
 
 # Проверяем, завершилась ли генерация отчета о покрытии успешно
-if [ $? -ne 1 ]; then
+if [ $? -ne 0 ]; then
   echo "Ошибка при генерации отчета о покрытии кода"
+  read
+  exit 1
+fi
+# 6. Запуск приложения (опционально)
+java -jar BlackJack.jar
+
+# Проверяем, завершился ли запуск приложения успешно
+if [ $? -ne 0 ]; then
+  echo "Ошибка при запуске приложения"
   read
   exit 1
 fi
