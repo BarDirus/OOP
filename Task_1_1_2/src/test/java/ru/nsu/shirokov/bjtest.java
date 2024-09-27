@@ -59,7 +59,7 @@ class BjTest {
     @Test
     public void testPlayerBust() {
         // Imitatsiya perebora u igroka
-        player.addCard(new Card("Chervi", "Dama",10));
+        player.addCard(new Card("Chervi", "Dama", 10));
         player.addCard(new Card("Piki", "Desyatka", 10));
         player.addCard(new Card("Bubny", "Troyka", 3));
 
@@ -89,7 +89,7 @@ class BjTest {
         game.dealer.addCard(new Card("Piki", "Valet", 10));
         game.dealer.addCard(new Card("Chervi", "Shesterka", 6));
 
-        assertEquals(game.determineWinner(),1 , "Igrok dolzhen pobedit s bolshim kolichestvom ochkov");
+        assertEquals(game.determineWinner(),1, "Igrok dolzhen pobedit s bolshim kolichestvom ochkov");
         game.player.reset();
         game.dealer.reset();
     }
@@ -101,7 +101,7 @@ class BjTest {
         game.player.addCard(new Card("Bubny", "Pyaterka", 5));
         game.dealer.addCard(new Card("Piki", "Dama", 10));
         game.dealer.addCard(new Card("Chervi", "Desyatka", 10));
-        assertEquals(game.determineWinner(),0 , "Diler dolzhen pobedit s bolshim kolichestvom ochkov");
+        assertEquals(game.determineWinner(),0, "Diler dolzhen pobedit s bolshim kolichestvom ochkov");
         game.player.reset();
         game.dealer.reset();
     }
