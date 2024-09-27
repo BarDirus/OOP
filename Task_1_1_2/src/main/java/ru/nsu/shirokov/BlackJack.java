@@ -165,7 +165,9 @@ class Card {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {return false;}
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Card card = (Card) o;
         return value == card.value && Objects.equals(suit, card.suit)
                 && Objects.equals(rank, card.rank);
@@ -179,8 +181,8 @@ class Deck {
     public final List<Object> cards = new ArrayList<>();
 
     public Deck() {
-        String[] suits = {"Chervi", "Bubny","Piki", "Trefy"};
-        String[] ranks = {"2", "3", "4","5", "6", "7", "8", "9", "10",
+        String[] suits = {"Chervi", "Bubny", "Piki", "Trefy"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10",
                 "Valet", "Dama", "Korol", "Tuz"};
         int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11};
 
@@ -197,7 +199,7 @@ class Deck {
 
     public Card drawCard() {
 
-        return (Card) cards.remove(cards.size()-1);
+        return (Card) cards.remove(cards.size() - 1);
     }
 }
 /**
@@ -214,10 +216,10 @@ class Player {
         score += card.getValue();
         adjustForAce();
     }
-    public void reset()
-    {
+
+    public void reset() {
         hand.clear();
-        score=0;
+        score = 0;
     }
 
     public int getScore() {

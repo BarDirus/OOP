@@ -216,6 +216,6 @@ class BjTest {
         player.addCard(new Card("Bubny", "Vosmerka", 8));
 
         assertFalse(player.isBust(), "Igrok ne dolzhen perebrat");
-        assertEquals(17,player.getScore(), "Summa ochkov dolzhna byt 17");
+        assertEquals(17, player.getScore(), "Summa ochkov dolzhna byt 17");
     }
 }
