@@ -4,6 +4,7 @@ import java.util.*;
 /**
  * Реализация Блэкжэка.
  */
+
 public class BlackJack {
     public Deck deck = new Deck();
     public Player player = new Player();
@@ -40,7 +41,7 @@ public class BlackJack {
     /**
      * Начало раунда.
      */
-    
+
     public void playRound() {
         player.reset();
         dealer.reset();
@@ -70,6 +71,7 @@ public class BlackJack {
     /**
      *Ход игрока.
      */
+
     public void playerTurn() {
         while (true) {
             System.out.println("Vvedite '1'. chtoby vzyat kartu. ili '0'. chtoby ostanovitsya.");
@@ -89,11 +91,13 @@ public class BlackJack {
     /**
      * Ход дилреа.
      */
+
     public void dealerTurn() {
         System.out.println("Karty dilera: " + dealer.getHand());
         while (dealer.getScore() < 17) {
             dealer.addCard(deck.drawCard());
-            System.out.println("Diler otkryl kartu: " + dealer.getHand() + " > " + dealer.getScore());
+            System.out.println("Diler otkryl kartu: " + dealer.getHand()
+                    + " > " + dealer.getScore());
         }
 
         if (dealer.isBust()) {
@@ -103,6 +107,7 @@ public class BlackJack {
     /**
      * Определение победителя.
      */
+
     public int determineWinner() {
         if (player.isBust() || player.getScore() < dealer.getScore()) {
             System.out.println("Diler vyigral!");
@@ -125,6 +130,7 @@ public class BlackJack {
 /**
  * Карты.
  */
+
 class Card {
     private final String suit;
     private final String rank;
@@ -166,12 +172,14 @@ class Card {
 /**
  * Данные о колоде.
  */
+
 class Deck {
     public final List<Object> cards = new ArrayList<>();
 
     public Deck() {
         String[] suits = {"Chervi", "Bubny","Piki", "Trefy"};
-        String[] ranks = {"2", "3", "4","5", "6", "7", "8", "9", "10", "Valet", "Dama", "Korol", "Tuz"};
+        String[] ranks = {"2", "3", "4","5", "6", "7", "8", "9", "10",
+                "Valet", "Dama", "Korol", "Tuz"};
         int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11};
 
         for (String suit : suits) {
@@ -191,6 +199,7 @@ class Deck {
 /**
  * Данные игрока/дилера.
  */
+
 class Player {
     private final List<Card> hand = new ArrayList<>();
     private int score = 0;
