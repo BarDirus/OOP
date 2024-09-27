@@ -12,7 +12,7 @@ fi
 
 # 2. Компиляция исходного кода
 javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/BlackJack.java  -d ./build/classes/java/main
-javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/BlackJack.java ./src/test/java/ru/nsu/shirokov/BJTest.java  -d ./build/classes/java/test
+javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/BlackJack.java ./src/test/java/ru/nsu/shirokov/BJtest.java  -d ./build/classes/java/test
 # Проверяем, завершилась ли компиляция успешно
 if [ $? -ne 0 ]; then
   echo "Ошибка при компиляции исходного кода"

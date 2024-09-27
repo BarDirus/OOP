@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0de0ebb2-f3a3-41cc-88b2-c5ebfeb83a57" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackJack.jar" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJack.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/shirokov/BJtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/shirokov/bjtest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

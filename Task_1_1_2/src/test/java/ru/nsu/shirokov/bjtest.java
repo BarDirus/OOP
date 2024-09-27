@@ -6,7 +6,7 @@ import java.io.ByteArrayInputStream;
 import org.junit.jupiter.api.Test;
 
 
-class BJtest {
+class BjTest {
     private final BlackJack game = new BlackJack();
     private final Player player = new Player();
     private final Player dealer = new Player();
