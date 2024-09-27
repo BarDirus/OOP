@@ -202,7 +202,7 @@ class BjTest {
     @Test
     public void testPlayerScoreAdjustmentForAce() {
         Player player = new Player();
-        player.addCard(new Card("Piki","Tuz", 11));
+        player.addCard(new Card("Piki", "Tuz", 11));
         player.addCard(new Card("Chervi", "Desyatka", 10));
         player.addCard(new Card("Bubny", "Dama", 10));
 

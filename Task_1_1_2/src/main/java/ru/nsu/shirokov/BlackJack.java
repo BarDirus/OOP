@@ -4,14 +4,19 @@ import java.util.*;
 
 public class BlackJack {
     public Deck deck = new Deck();
-    public Player player= new Player();
-    public Player dealer= new Player();
-    public Scanner scanner= new Scanner(System.in);
+    public Player player = new Player();
+    public Player dealer = new Player();
+    public Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Перемешивание колод
+     */
     public BlackJack() {
         deck.shuffle();
     }
-
+    /**
+     * Начало игры
+     */
     public void playGame() {
         System.out.println("Dobro pozhalovat v Blekdzhek!");
 
@@ -22,13 +27,16 @@ public class BlackJack {
             System.out.println("\nRaund " + round);
             playRound();
             round++;
-            System.out.println("Vvedite '0'. chtoby vyyti. ili lyuboye drugoye chislo dlya prodolzheniya.");
+            System.out.println("Vvedite '0'. chtoby vyyti. ili lyuboye drugoye " +
+                    "chislo dlya prodolzheniya.");
             gameOver = scanner.nextInt() == 0;
         }
 
         System.out.println("Spasibo za igru!");
     }
-
+    /**
+     * Начало раунда
+     */
     public void playRound() {
         player.reset();
         dealer.reset();
@@ -55,7 +63,9 @@ public class BlackJack {
 
         determineWinner();
     }
-
+    /**
+     *Ход игрока
+     */
     public void playerTurn() {
         while (true) {
             System.out.println("Vvedite '1'. chtoby vzyat kartu. ili '0'. chtoby ostanovitsya.");
@@ -72,7 +82,9 @@ public class BlackJack {
             }
         }
     }
-
+    /**
+     * Ход дилреа
+     */
     public void dealerTurn() {
         System.out.println("Karty dilera: " + dealer.getHand());
         while (dealer.getScore() < 17) {
@@ -84,7 +96,9 @@ public class BlackJack {
             System.out.println("Diler proigral. nabrav bolshe 21 ochka.");
         }
     }
-
+    /**
+     * Определение победителя
+     */
     public int determineWinner() {
         if (player.isBust() || player.getScore() < dealer.getScore()) {
             System.out.println("Diler vyigral!");
@@ -104,6 +118,9 @@ public class BlackJack {
     }
 
 }
+/**
+ * Карты
+ */
 class Card {
     private final String suit;
     private final String rank;
@@ -142,6 +159,9 @@ class Card {
                 Objects.equals(rank, card.rank);
     }
 }
+/**
+ * Данные о колоде
+ */
 class Deck {
     public final List<Object> cards = new ArrayList<>();
 
@@ -164,6 +184,9 @@ class Deck {
         return (Card) cards.remove(cards.size()-1);
     }
 }
+/**
+ * Данные игрока/дилера
+ */
 class Player {
     private final List<Card> hand = new ArrayList<>();
     private int score = 0;
