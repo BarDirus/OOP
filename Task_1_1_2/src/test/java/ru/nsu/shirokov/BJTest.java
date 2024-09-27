@@ -1,16 +1,15 @@
 package ru.nsu.shirokov;
 
-
-
-import java.io.ByteArrayInputStream;
-import java.util.*;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class BJTest {
-    private final BlackJack game= new BlackJack();;
-    private final Player player= new Player();;
-    private final Player dealer= new Player();;
+import java.io.ByteArrayInputStream;
+import org.junit.jupiter.api.Test;
+
+
+class BjTest {
+    private final BlackJack game = new BlackJack();
+    private final Player player = new Player();
+    private final Player dealer = new Player();
 
     @Test
     public void testInitialDeal() {
