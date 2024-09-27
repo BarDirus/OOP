@@ -1,19 +1,20 @@
 package ru.nsu.shirokov;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.io.ByteArrayInputStream;
-
+import java.util.*;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
+class BJTest {
+    private final BlackJack game= new BlackJack();;
+    private final Player player= new Player();;
+    private final Player dealer= new Player();;
 
-class BjTest {
-    private final BlackJack game = new BlackJack();
-    private final Player player = new Player();
-    private final Player dealer = new Player();
     @Test
     public void testInitialDeal() {
-// Proveryayem. chto razdacha v nachale igry proiskhodit korrektno
+        // Proveryayem. chto razdacha v nachale igry proiskhodit korrektno
         String simulatedInput = "0"; // Например, игрок выберет '1'
         ByteArrayInputStream in = new ByteArrayInputStream(simulatedInput.getBytes());
         game.playRound();
@@ -24,15 +25,17 @@ class BjTest {
         game.player.reset();
         game.dealer.reset();
     }
+
     @Test
     public void testDealerHitsUntil17() {
         // Дилер берет карты, пока у него меньше 17
         game.dealerTurn();
-        assertTrue(game.dealer.getScore() >= 17, "Дилер должен брать карты, пока не наберет 17 или больше");
+        assertTrue(game.dealer.getScore() >= 17, "Diler beret carti, poke ne naberet 17");
     }
+
     @Test
     public void testPlayerBlackJackWin() {
-// Imitatsiya blekdzheka dlya igroka
+        // Imitatsiya blekdzheka dlya igroka
         player.addCard(new Card("Trefy", "Tuz", 11));
         player.addCard(new Card("Chervi", "Korol", 10));
 
@@ -44,7 +47,7 @@ class BjTest {
 
     @Test
     public void testDealerBlackJackWin() {
-// Imitatsiya blekdzheka dlya dilera
+        // Imitatsiya blekdzheka dlya dilera
         dealer.addCard(new Card("Chervi", "Tuz", 11));
         dealer.addCard(new Card("Bubny", "Dama", 10));
 
@@ -56,7 +59,7 @@ class BjTest {
 
     @Test
     public void testPlayerBust() {
-// Imitatsiya perebora u igroka
+        // Imitatsiya perebora u igroka
         player.addCard(new Card("Chervi", "Dama",10));
         player.addCard(new Card("Piki", "Desyatka", 10));
         player.addCard(new Card("Bubny", "Troyka", 3));
@@ -68,7 +71,7 @@ class BjTest {
 
     @Test
     public void testDealerBust() {
-// Imitatsiya perebora u dilera
+        // Imitatsiya perebora u dilera
         dealer.addCard(new Card("Piki", "Dama", 10));
         dealer.addCard(new Card("Chervi", "Desyatka", 10));
         dealer.addCard(new Card("Bubny", "Chetverka", 4));
@@ -80,7 +83,7 @@ class BjTest {
 
     @Test
     public void testPlayerWins() {
-// Igrok vyigryvayet po ochkam
+        // Igrok vyigryvayet po ochkam
         game.player.addCard(new Card("Chervi", "Dama", 10));
         game.player.addCard(new Card("Bubny", "Semerka", 7));
 
@@ -94,8 +97,7 @@ class BjTest {
 
     @Test
     public void testDealerWins() {
-// Diler vyigryvayet po ochkam
-
+        // Diler vyigryvayet po ochkam
         game.player.addCard(new Card("Chervi", "Shesterka", 6));
         game.player.addCard(new Card("Bubny", "Pyaterka", 5));
         game.dealer.addCard(new Card("Piki", "Dama", 10));
@@ -107,7 +109,7 @@ class BjTest {
 
     @Test
     public void testTie() {
-// Proverka nichi
+        // Proverka nichi
         player.addCard(new Card("Chervi", "Shesterka", 6));
         player.addCard(new Card("Bubny", "Pyaterka", 5));
 
@@ -140,6 +142,7 @@ class BjTest {
         deck2.shuffle();
         assertNotEquals(deck1.cards, deck2.cards, "Peremeshannyye kolody dolzhny imet raznyye poryadki kart");
     }
+
     @Test
     public void testCardCreation() {
         Card card = new Card("Piki", "Desyatka", 10);
@@ -153,6 +156,7 @@ class BjTest {
         Card aceCard = new Card("Chervi", "Tuz", 11);
         assertEquals(11, aceCard.getValue(), "Tuz dolzhen imet znacheniye 11 po umolchaniyu");
     }
+
     @Test
     public void testFaceCardValues() {
         Card kingCard = new Card("Bubny", "Korol", 10);
