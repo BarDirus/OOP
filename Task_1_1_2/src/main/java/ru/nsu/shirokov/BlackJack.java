@@ -37,7 +37,7 @@ public class BlackJack {
         dealer.addCard(deck.drawCard());
         dealer.addCard(deck.drawCard());
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-        if (stackTrace.length > 2) { // Элемент 0 - это getStackTrace(), 1 - это playGame()
+        if (stackTrace.length > 2) {
             return;
         }
         System.out.println("Vashi karty: " + player.getHand() + " > " + player.getScore());

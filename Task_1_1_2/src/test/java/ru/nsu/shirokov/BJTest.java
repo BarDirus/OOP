@@ -22,7 +22,12 @@ class BJTest {
         game.player.reset();
         game.dealer.reset();
     }
-
+    @Test
+    public void testDealerHitsUntil17() {
+        // Дилер берет карты, пока у него меньше 17
+        game.dealerTurn();
+        assertTrue(game.dealer.getScore() >= 17, "Дилер должен брать карты, пока не наберет 17 или больше");
+    }
     @Test
     public void testPlayerBlackJackWin() {
 // Imitatsiya blekdzheka dlya igroka
