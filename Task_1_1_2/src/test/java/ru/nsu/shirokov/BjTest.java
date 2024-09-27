@@ -89,7 +89,7 @@ class BjTest {
         game.dealer.addCard(new Card("Piki", "Valet", 10));
         game.dealer.addCard(new Card("Chervi", "Shesterka", 6));
 
-        assertEquals(game.determineWinner(),1, "Igrok dolzhen pobedit s bolshim kolichestvom ochkov");
+        assertEquals(game.determineWinner(), 1, "Igrok dolzhen pobedit s bolshimi ochkami");
         game.player.reset();
         game.dealer.reset();
     }
@@ -101,7 +101,7 @@ class BjTest {
         game.player.addCard(new Card("Bubny", "Pyaterka", 5));
         game.dealer.addCard(new Card("Piki", "Dama", 10));
         game.dealer.addCard(new Card("Chervi", "Desyatka", 10));
-        assertEquals(game.determineWinner(),0, "Diler dolzhen pobedit s bolshim kolichestvom ochkov");
+        assertEquals(game.determineWinner(), 0, "Diler dolzhen pobedit s bolshimi ochkami");
         game.player.reset();
         game.dealer.reset();
     }
@@ -119,6 +119,7 @@ class BjTest {
         player.reset();
         dealer.reset();
     }
+
     @Test
     public void testDeckSize() {
         Deck deck = new Deck();
@@ -130,7 +131,7 @@ class BjTest {
         Deck deck = new Deck();
         int initialSize = deck.cards.size();
         deck.drawCard();
-        assertEquals(initialSize - 1, deck.cards.size(), "Posle vytyagivaniya karty razmer kolody dolzhen umenshitsya na 1");
+        assertEquals(initialSize - 1, deck.cards.size(), "koloda dolzhna umenshitsya na 1");
     }
 
     @Test
@@ -139,7 +140,7 @@ class BjTest {
         Deck deck2 = new Deck();
         deck1.shuffle();
         deck2.shuffle();
-        assertNotEquals(deck1.cards, deck2.cards, "Peremeshannyye kolody dolzhny imet raznyye poryadki kart");
+        assertNotEquals(deck1.cards, deck2.cards, "kolody dolzhny imet raznyye poryadki kart");
     }
 
     @Test
@@ -170,7 +171,7 @@ class BjTest {
     @Test
     public void testToString() {
         Card card = new Card("Trefy", "Valet", 10);
-        assertEquals("Valet Trefy (10)", card.toString(), "Metod toString() dolzhen korrektno vyvodit kartu");
+        assertEquals("Valet Trefy (10)", card.toString(), "dolzheno korrektno vyvodit kartu");
     }
 
     @Test
@@ -178,7 +179,7 @@ class BjTest {
         Card card1 = new Card("Piki", "Desyatka", 10);
         Card card2 = new Card("Piki", "Desyatka", 10);
 
-        assertEquals(card1, card2, "Karty s odinakovoy mastyu. nominalom i znacheniyem dolzhny byt ravny");
+        assertEquals(card1, card2, "odynakovie karty dolzhny byt ravny");
     }
 
     @Test
@@ -205,7 +206,7 @@ class BjTest {
         player.addCard(new Card("Chervi", "Desyatka", 10));
         player.addCard(new Card("Bubny", "Dama", 10));
 
-        assertEquals(21, player.getScore(), "Summa ochkov dolzhna byt skorrektirovana s uchetom tuza");
+        assertEquals(21, player.getScore(), "Summa ochkov s uchetom tuza");
     }
 
     @Test
