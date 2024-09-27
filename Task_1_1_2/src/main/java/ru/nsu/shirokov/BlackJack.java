@@ -1,7 +1,9 @@
 package ru.nsu.shirokov;
 
 import java.util.*;
-
+/**
+ * Реализация Блэкжэка.
+ */
 public class BlackJack {
     public Deck deck = new Deck();
     public Player player = new Player();
@@ -9,14 +11,15 @@ public class BlackJack {
     public Scanner scanner = new Scanner(System.in);
 
     /**
-     * Перемешивание колод
+     * Перемешивание колод.
      */
     public BlackJack() {
         deck.shuffle();
     }
     /**
-     * Начало игры
+     * Начало игры.
      */
+
     public void playGame() {
         System.out.println("Dobro pozhalovat v Blekdzhek!");
 
@@ -27,16 +30,17 @@ public class BlackJack {
             System.out.println("\nRaund " + round);
             playRound();
             round++;
-            System.out.println("Vvedite '0'. chtoby vyyti. ili lyuboye drugoye " +
-                    "chislo dlya prodolzheniya.");
+            System.out.println("Vvedite '0'. chtoby vyyti. ili lyuboye drugoye "
+                    + "chislo dlya prodolzheniya.");
             gameOver = scanner.nextInt() == 0;
         }
 
         System.out.println("Spasibo za igru!");
     }
     /**
-     * Начало раунда
+     * Начало раунда.
      */
+    
     public void playRound() {
         player.reset();
         dealer.reset();
@@ -64,7 +68,7 @@ public class BlackJack {
         determineWinner();
     }
     /**
-     *Ход игрока
+     *Ход игрока.
      */
     public void playerTurn() {
         while (true) {
@@ -83,7 +87,7 @@ public class BlackJack {
         }
     }
     /**
-     * Ход дилреа
+     * Ход дилреа.
      */
     public void dealerTurn() {
         System.out.println("Karty dilera: " + dealer.getHand());
@@ -97,7 +101,7 @@ public class BlackJack {
         }
     }
     /**
-     * Определение победителя
+     * Определение победителя.
      */
     public int determineWinner() {
         if (player.isBust() || player.getScore() < dealer.getScore()) {
@@ -119,7 +123,7 @@ public class BlackJack {
 
 }
 /**
- * Карты
+ * Карты.
  */
 class Card {
     private final String suit;
@@ -160,7 +164,7 @@ class Card {
     }
 }
 /**
- * Данные о колоде
+ * Данные о колоде.
  */
 class Deck {
     public final List<Object> cards = new ArrayList<>();
@@ -185,7 +189,7 @@ class Deck {
     }
 }
 /**
- * Данные игрока/дилера
+ * Данные игрока/дилера.
  */
 class Player {
     private final List<Card> hand = new ArrayList<>();
