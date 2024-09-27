@@ -158,15 +158,15 @@ class Card {
     public String toString() {
         return rank + " " + suit + " (" + value + ")";
     }
+
     // Переопределяем метод equals()
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {return true;};
+        if (o == null || getClass() != o.getClass()) {return false;}
         Card card = (Card) o;
-        return value == card.value &&
-                Objects.equals(suit, card.suit) &&
-                Objects.equals(rank, card.rank);
+        return value == card.value && Objects.equals(suit, card.suit)
+                && Objects.equals(rank, card.rank);
     }
 }
 /**
@@ -188,9 +188,11 @@ class Deck {
             }
         }
     }
+
     public void shuffle() {
         Collections.shuffle(cards);
     }
+
     public Card drawCard() {
 
         return (Card) cards.remove(cards.size()-1);
