@@ -38,8 +38,8 @@ class BjTest {
         player.addCard(new Card("Trefy", "Tuz", 11));
         player.addCard(new Card("Chervi", "Korol", 10));
 
-        assertTrue(player.hasBlackjack(), "Igrok dolzhen poluchit blekdzhek");
-        assertFalse(dealer.hasBlackjack(), "Diler ne dolzhen poluchit blekdzhek");
+        assertTrue(game.isBlackJack(player), "Igrok dolzhen poluchit blekdzhek");
+        assertFalse(game.isBlackJack(dealer), "Diler ne dolzhen poluchit blekdzhek");
         player.reset();
         dealer.reset();
     }
@@ -50,8 +50,8 @@ class BjTest {
         dealer.addCard(new Card("Chervi", "Tuz", 11));
         dealer.addCard(new Card("Bubny", "Dama", 10));
 
-        assertTrue(dealer.hasBlackjack(), "Diler dolzhen poluchit blekdzhek");
-        assertFalse(player.hasBlackjack(), "Igrok ne dolzhen poluchit blekdzhek");
+        assertTrue(game.isBlackJack(dealer), "Diler dolzhen poluchit blekdzhek");
+        assertFalse(game.isBlackJack(player), "Igrok ne dolzhen poluchit blekdzhek");
         player.reset();
         dealer.reset();
     }
@@ -63,7 +63,7 @@ class BjTest {
         player.addCard(new Card("Piki", "Desyatka", 10));
         player.addCard(new Card("Bubny", "Troyka", 3));
 
-        assertTrue(player.isBust(), "Igrok dolzhen perebrat (summa > 21)");
+        assertTrue(game.isBust(player), "Igrok dolzhen perebrat (summa > 21)");
         player.reset();
         dealer.reset();
     }
@@ -75,7 +75,7 @@ class BjTest {
         dealer.addCard(new Card("Chervi", "Desyatka", 10));
         dealer.addCard(new Card("Bubny", "Chetverka", 4));
 
-        assertTrue(dealer.isBust(), "Diler dolzhen perebrat (summa > 21)");
+        assertTrue(game.isBust(dealer), "Diler dolzhen perebrat (summa > 21)");
         player.reset();
         dealer.reset();
     }
@@ -196,7 +196,7 @@ class BjTest {
         player.addCard(new Card("Piki", "Tuz", 11));
         player.addCard(new Card("Chervi", "Desyatka", 10));
 
-        assertTrue(player.hasBlackjack(), "Igrok dolzhen imet blekdzhek");
+        assertTrue(game.isBlackJack(player), "Igrok dolzhen imet blekdzhek");
     }
 
     @Test
@@ -215,7 +215,7 @@ class BjTest {
         player.addCard(new Card("Chervi", "Devyatka", 9));
         player.addCard(new Card("Bubny", "Vosmerka", 8));
 
-        assertFalse(player.isBust(), "Igrok ne dolzhen perebrat");
+        assertFalse(game.isBust(player), "Igrok ne dolzhen perebrat");
         assertEquals(17, player.getScore(), "Summa ochkov dolzhna byt 17");
     }
 }

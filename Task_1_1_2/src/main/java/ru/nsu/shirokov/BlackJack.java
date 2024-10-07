@@ -56,13 +56,13 @@ public class BlackJack {
         System.out.println("Vashi karty: " + player.getHand() + " > " + player.getScore());
         System.out.println("Karty dilera: " + dealer.getHand().get(0) + ". ");
 
-        if (player.hasBlackjack()) {
+        if (isBlackJack(player)) {
             System.out.println("U vas Blekdzhek! Vy pobedili!");
             return;
         }
 
         playerTurn();
-        if (!player.isBust()) {
+        if (!isBust(player)) {
             dealerTurn();
         }
 
@@ -79,7 +79,7 @@ public class BlackJack {
             if (choice == 1) {
                 player.addCard(deck.drawCard());
                 System.out.println("Vashi karty: " + player.getHand() + " > " + player.getScore());
-                if (player.isBust()) {
+                if (isBust(player)) {
                     System.out.println("Vy proigrali. nabrav bolshe 21 ochka.");
                     break;
                 }
@@ -100,7 +100,7 @@ public class BlackJack {
                     + " > " + dealer.getScore());
         }
 
-        if (dealer.isBust()) {
+        if (isBust(dealer)) {
             System.out.println("Diler proigral. nabrav bolshe 21 ochka.");
         }
     }
@@ -109,10 +109,10 @@ public class BlackJack {
      */
 
     public int determineWinner() {
-        if (player.isBust() || player.getScore() < dealer.getScore()) {
+        if (isBust(player) || player.getScore() < dealer.getScore()) {
             System.out.println("Diler vyigral!");
             return 0;
-        } else if (dealer.isBust() || player.getScore() > dealer.getScore()) {
+        } else if (isBust(dealer) || player.getScore() > dealer.getScore()) {
             System.out.println("Vy vyigrali!");
             return 1;
         } else {
@@ -120,11 +120,19 @@ public class BlackJack {
             return 100;
         }
     }
-
+    public boolean isBust(Player player)
+    {
+        return player.getScore() > 21;
+    }
+    public boolean isBlackJack(Player player)
+    {
+        return player.getScore() == 21 && player.getHand().size() == 2;
+    }
     public static void main(String[] args) {
         BlackJack game = new BlackJack();
         game.playGame();
     }
+
 
 }
 /**
@@ -242,12 +250,5 @@ class Player {
         return hand;
     }
 
-    public boolean isBust() {
-        return score > 21;
-    }
-
-    public boolean hasBlackjack() {
-        return score == 21 && hand.size() == 2;
-    }
 }
 

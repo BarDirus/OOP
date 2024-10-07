@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0de0ebb2-f3a3-41cc-88b2-c5ebfeb83a57" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackJack.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/BlackJack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/shirokov/BjTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/shirokov/BjTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Новый текстовый документ.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,34 +68,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.BJTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CardTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DeckTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.HeapSortTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.PlayerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Task_1_1_1.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Task_1_1_2 [:BlackJack.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Task_1_1_2 [:ru.nsu.shirokov.BlackJack.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Task_1_1_2.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Test_1_1_1.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#42 on Task__1__1__2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/project/OOP/Task_1_1_2/src/main/java/ru/nsu/shirokov&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3467433&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.BJTest.executor": "Run",
+    "Gradle.BjTest.executor": "Run",
+    "Gradle.BjTest.testInitialDeal.executor": "Run",
+    "Gradle.CardTest.executor": "Run",
+    "Gradle.DeckTest.executor": "Run",
+    "Gradle.HeapSortTest.executor": "Run",
+    "Gradle.PlayerTest.executor": "Run",
+    "Gradle.Task_1_1_1.executor": "Run",
+    "Gradle.Task_1_1_2 [:BlackJack.main()].executor": "Run",
+    "Gradle.Task_1_1_2 [:ru.nsu.shirokov.BlackJack.main()].executor": "Run",
+    "Gradle.Task_1_1_2.executor": "Run",
+    "Gradle.Test_1_1_1.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "#42 on Task__1__1__2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/project/OOP/Task_1_1_2/src/main/java/ru/nsu/shirokov",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3467433",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.BJTest">
     <configuration name="BlackJack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.shirokov.BlackJack" />
@@ -128,6 +136,54 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="BjTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.nsu.shirokov.BjTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BjTest.testInitialDeal" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.nsu.shirokov.BjTest.testInitialDeal&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,6 +198,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.BJTest" />
+        <item itemvalue="Gradle.BjTest" />
+        <item itemvalue="Gradle.BjTest.testInitialDeal" />
         <item itemvalue="Application.BlackJack" />
       </list>
     </recent_temporary>
