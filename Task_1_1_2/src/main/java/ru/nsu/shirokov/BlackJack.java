@@ -120,14 +120,15 @@ public class BlackJack {
             return 100;
         }
     }
-    public boolean isBust(Player player)
-    {
+
+    public boolean isBust(Player player) {
         return player.getScore() > 21;
     }
-    public boolean isBlackJack(Player player)
-    {
+
+    public boolean isBlackJack(Player player) {
         return player.getScore() == 21 && player.getHand().size() == 2;
     }
+
     public static void main(String[] args) {
         BlackJack game = new BlackJack();
         game.playGame();
