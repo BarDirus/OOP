@@ -16,7 +16,7 @@ public class Sub extends Expression {
 
     @Override
     public Expression derivative(String variable) {
-        /**
+        /*
          * Производная разности: (f - g)' = f' - g'
          */
 
