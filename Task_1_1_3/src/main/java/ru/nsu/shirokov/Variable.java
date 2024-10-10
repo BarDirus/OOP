@@ -2,7 +2,9 @@ package ru.nsu.shirokov;
 
 import java.util.Map;
 
-// Класс Variable (переменная)
+/**
+ * РљР»Р°СЃСЃ Variable (РїРµСЂРµРјРµРЅРЅР°СЏ)
+ */
 public class Variable extends Expression {
     private final String name;
 
@@ -22,6 +24,10 @@ public class Variable extends Expression {
 
     @Override
     public int eval(Map<String, Integer> variables) {
-        return variables.getOrDefault(name, 0);
+        if (variables.containsKey(name)) {
+            return variables.get(name);
+        } else {
+            throw new IllegalArgumentException("Variable " + name + " is not defined");
+        }
     }
 }

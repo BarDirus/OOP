@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/build.gradle" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Add.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/BlackJack.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Card.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Deck.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Div.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Expression.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Mul.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Number.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Player.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Sub.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Variable.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/main.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/ru/nsu/shirokov/BJTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/ru/nsu/shirokov/DeckTest.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />

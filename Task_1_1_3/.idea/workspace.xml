@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0de0ebb2-f3a3-41cc-88b2-c5ebfeb83a57" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Expression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest.mf" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.mf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/BlackJack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Expession.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackJack.jar" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJack.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Expression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Mul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Mul.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Number.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/Variable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/shirokov/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/shirokov/BJTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +36,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Task_1_1_3" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -78,6 +86,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.BJTest.executor": "Run",
+    "Gradle.Build Task_1_1_3.executor": "Run",
     "Gradle.CardTest.executor": "Run",
     "Gradle.DeckTest.executor": "Run",
     "Gradle.HeapSortTest.executor": "Run",
@@ -88,6 +97,7 @@
     "Gradle.Task_1_1_2.executor": "Run",
     "Gradle.Task_1_1_3 [:ru.nsu.shirokov.main.main()].executor": "Run",
     "Gradle.Test_1_1_1.executor": "Run",
+    "JUnit.NumberTest and 5 more.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -97,7 +107,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/project/OOP/Task_1_1_2/src/main/java/ru/nsu/shirokov",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3467433",
     "settings.editor.selected.configurable": "configurable.group.appearance"

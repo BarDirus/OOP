@@ -1,7 +1,9 @@
 package ru.nsu.shirokov;
 
 import java.util.Map;
-
+/**
+ * Класс Mul (Умножение)
+ */
 public class Mul extends Expression {
     private final Expression left, right;
 
@@ -14,7 +16,9 @@ public class Mul extends Expression {
     public String print() {
         return "(" + left.print() + "*" + right.print() + ")";
     }
-
+    /**
+     * Производная произведения: (f * g)' = f' * g + f * g'
+     */
     @Override
     public Expression derivative(String variable) {
         return new Add(
