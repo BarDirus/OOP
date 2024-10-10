@@ -2,7 +2,7 @@ package ru.nsu.shirokov;
 
 import java.util.Map;
 
-/*
+/**
  * Класс Add (Сложение)
  */
 public class Add extends Expression {

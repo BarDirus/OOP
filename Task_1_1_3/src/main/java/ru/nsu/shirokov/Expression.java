@@ -2,7 +2,7 @@ package ru.nsu.shirokov;
 
 import java.util.Map;
 
-/*
+/**
  * Класс Expression (Выражение)
  */
 public abstract class Expression {
