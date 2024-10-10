@@ -3,7 +3,7 @@ package ru.nsu.shirokov;
 import java.util.Map;
 
 /**
- * Класс Div (Деление)
+ * Класс Div (Деление).
  */
 public class Div extends Expression {
     private final Expression left;

@@ -3,7 +3,7 @@ package ru.nsu.shirokov;
 import java.util.Map;
 
 /**
-* Класс Number (константа)
+* Класс Number (константа).
 */
 public class Number extends Expression {
     private final int value;

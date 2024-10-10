@@ -3,7 +3,7 @@ package ru.nsu.shirokov;
 import java.util.Map;
 
 /**
- * Класс Expression (Выражение)
+ * Класс Expression (Выражение).
  */
 public abstract class Expression {
     public abstract String print();
