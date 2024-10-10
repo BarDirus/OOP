@@ -4,7 +4,8 @@ doc/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-
+libs/
+.idea/
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
