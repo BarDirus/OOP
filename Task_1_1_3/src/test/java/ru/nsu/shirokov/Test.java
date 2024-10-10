@@ -5,7 +5,83 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
+class MainTest {
 
+    @Test
+    public void testExpressionCreationAndPrint() {
+        // Создание выражения (3 + (2 * x))
+        Expression e = new Add(new Number(3), new Mul(new Number(2), new Variable("x")));
+
+        // Ожидаемая строка выражения
+        String expected = "(3+(2*x))";
+
+        // Проверка вывода выражения
+        assertEquals(expected, e.print(), "Выражение напечатано неправильно");
+    }
+
+    @Test
+    public void testDerivative() {
+        // Создание выражения (3 + (2 * x))
+        Expression e = new Add(new Number(3), new Mul(new Number(2), new Variable("x")));
+
+        // Дифференцирование по переменной x
+        Expression derivative = e.derivative("x");
+
+        // Ожидаемое выражение после дифференцирования
+        String expected = "(0+((0*x)+(2*1)))";
+
+        // Проверка вывода производной
+        assertEquals(expected, derivative.print(), "Неправильное дифференцирование выражения");
+    }
+
+    @Test
+    public void testEvaluationWithVariable() {
+        // Создание выражения (3 + (2 * x))
+        Expression e = new Add(new Number(3), new Mul(new Number(2), new Variable("x")));
+
+        // Значение переменной x = 10
+        Map<String, Integer> variables = new HashMap<>();
+        variables.put("x", 10);
+
+        // Ожидаемый результат: 3 + (2 * 10) = 23
+        int expected = 23;
+
+        // Проверка вычисления выражения
+        assertEquals(expected, e.eval(variables), "Неправильное вычисление выражения при x=10");
+    }
+
+    @Test
+    public void testEvaluationWithMultipleVariables() {
+        // Создание выражения (3 + (x * y))
+        Expression e = new Add(new Number(3), new Mul(new Variable("x"), new Variable("y")));
+
+        // Значения переменных x = 2, y = 5
+        Map<String, Integer> variables = new HashMap<>();
+        variables.put("x", 2);
+        variables.put("y", 5);
+
+        // Ожидаемый результат: 3 + (2 * 5) = 13
+        int expected = 13;
+
+        // Проверка вычисления выражения
+        assertEquals(expected, e.eval(variables), "Неправильное вычисление выражения при x=2 и y=5");
+    }
+
+    @Test
+    public void testDerivativeConstant() {
+        // Создание выражения-константы 5
+        Expression e = new Number(5);
+
+        // Дифференцирование по переменной x
+        Expression derivative = e.derivative("x");
+
+        // Ожидаемое выражение после дифференцирования: 0
+        String expected = "0";
+
+        // Проверка вывода производной
+        assertEquals(expected, derivative.print(), "Неправильное дифференцирование константы");
+    }
+}
 class NumberTest {
 
     @Test

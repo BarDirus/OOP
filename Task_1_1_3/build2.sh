@@ -12,6 +12,7 @@ fi
 
 # 2. Компиляция исходного кода
 javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/*  -d ./build/classes/java/main
+javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/* ./src/test/java/ru/nsu/shirokov/*  -d ./build/classes/java/test
 # Проверяем, завершилась ли компиляция успешно
 if [ $? -ne 0 ]; then
   echo "Ошибка при компиляции исходного кода"
