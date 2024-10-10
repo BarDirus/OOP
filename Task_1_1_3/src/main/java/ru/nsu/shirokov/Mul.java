@@ -1,9 +1,10 @@
 package ru.nsu.shirokov;
 
 import java.util.Map;
-/**
+/*
  * Класс Mul (Умножение)
  */
+
 public class Mul extends Expression {
     private final Expression left, right;
 

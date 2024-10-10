@@ -2,7 +2,7 @@ package ru.nsu.shirokov;
 
 import java.util.Map;
 
-/**
+/*
  * Класс Variable (переменная)
  */
 public class Variable extends Expression {

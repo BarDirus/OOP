@@ -2,6 +2,9 @@ package ru.nsu.shirokov;
 
 import java.util.Map;
 
+/*
+ * Класс Div (Деление)
+ */
 public class Div extends Expression {
     private final Expression left;
     private final Expression right;
