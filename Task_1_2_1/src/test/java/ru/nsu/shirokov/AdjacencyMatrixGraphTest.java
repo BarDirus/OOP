@@ -62,10 +62,10 @@ public class AdjacencyMatrixGraphTest {
         graph.addEdge(1, 2);
         String expected =
                 "[[0, 1, 0, 0, 0], "
-                        +"[0, 0, 1, 0, 0], "
-                        +"[0, 0, 0, 0, 0], "
-                        +"[0, 0, 0, 0, 0], "
-                        +"[0, 0, 0, 0, 0]]";
+                        + "[0, 0, 1, 0, 0], "
+                        + "[0, 0, 0, 0, 0], "
+                        + "[0, 0, 0, 0, 0], "
+                        + "[0, 0, 0, 0, 0]]";
         assertEquals(expected, graph.toString());
     }
 
