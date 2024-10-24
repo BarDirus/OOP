@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *Граф на основе матрицы смежности.
+ */
 public class AdjacencyMatrixGraph implements Graph {
     public int[][] matrix;
     private int size;

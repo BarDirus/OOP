@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *Граф на основе списка смежности.
+ */
 public class AdjacencyListGraph implements Graph {
     private final Map<Integer, List<Integer>> adjList = new HashMap<>();
 

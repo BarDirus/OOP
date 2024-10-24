@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *Граф на основе матрицы инцидентности.
+ */
 public class IncidenceMatrixGraph implements Graph {
     private boolean[][] matrix;
     private int edgeCount;

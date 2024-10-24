@@ -10,10 +10,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ *Тесты для графа на основе списка смежности.
+ */
 public class AdjacencyListGraphTest {
     private AdjacencyListGraph graph;
 

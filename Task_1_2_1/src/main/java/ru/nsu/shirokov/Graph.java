@@ -3,6 +3,9 @@ package ru.nsu.shirokov;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ *Класс Графов
+ */
 public interface Graph {
     void addVertex(int vertex);
 
@@ -15,7 +18,7 @@ public interface Graph {
     List<Integer> getNeighbors(int vertex);
 
     void readFromFile(String filename) throws IOException;
-
+    
     String toString();
     // Представление графа в строку
     boolean equals(Object obj);

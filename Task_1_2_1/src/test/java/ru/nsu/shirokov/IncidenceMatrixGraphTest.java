@@ -9,10 +9,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ *Тесты для графа на основе матрицы инцидентности.
+ */
 public class IncidenceMatrixGraphTest {
     private IncidenceMatrixGraph graph;
 
@@ -62,7 +64,7 @@ public class IncidenceMatrixGraphTest {
         graph.addEdge(1, 2);
         String expected =
                 "0 1 0 0 0 \n"
-                        + "1 0 1 0 0 \n" 
+                        + "1 0 1 0 0 \n"
                         + "0 1 0 0 0 \n"
                         + "0 0 0 0 0 \n"
                         + "0 0 0 0 0 \n";
