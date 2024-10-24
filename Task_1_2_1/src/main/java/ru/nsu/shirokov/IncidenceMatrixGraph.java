@@ -5,11 +5,9 @@ import java.util.*;
 
 public class IncidenceMatrixGraph implements Graph {
     private boolean[][] matrix;
-    private int vertexCount;
     private int edgeCount;
 
     public IncidenceMatrixGraph(int vertices, int edges) {
-        this.vertexCount = vertices;
         this.edgeCount = edges;
         this.matrix = new boolean[vertices][edges];
     }
