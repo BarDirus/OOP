@@ -53,14 +53,17 @@ public class AdjacencyMatrixGraph implements Graph {
         }
         return neighbors;
     }
-
     @Override
     public void readFromFile(String filename) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String[] firstLine = br.readLine().split(" ");
             int vertices = Integer.parseInt(firstLine[0]);
 
-            for (int i = 0; i < vertices; i++) addVertex(i);
+            for (int i = 0; i < vertices; i++) {
+                if (i>size) {
+                    addVertex(i);
+                }
+            }
 
             String line;
             while ((line = br.readLine()) != null) {

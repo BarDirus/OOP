@@ -53,10 +53,6 @@ public class IncidenceMatrixGraph implements Graph {
     public void readFromFile(String filename) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String[] firstLine = br.readLine().split(" ");
-            int vertices = Integer.parseInt(firstLine[0]);
-
-            for (int i = 0; i < vertices; i++) addVertex(i);
-
             String line;
             while ((line = br.readLine()) != null) {
                 String[] edge = line.split(" ");
