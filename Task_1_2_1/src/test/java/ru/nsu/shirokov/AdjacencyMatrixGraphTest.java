@@ -72,7 +72,8 @@ public class AdjacencyMatrixGraphTest {
     @Test
     public void testAddVertex() {
         graph.addVertex(5);
-        assertEquals(List.of(), graph.getNeighbors(5), "Добавленная вершина не должна иметь соседей");
+        assertEquals(List.of(), graph.getNeighbors(5), "Добавленная вершина "
+                + "не должна иметь соседей");
     }
 
     @Test
@@ -91,7 +92,8 @@ public class AdjacencyMatrixGraphTest {
         graph.addEdge(0, 1);
         graph.resizeMatrix(6);
 
-        assertTrue(graph.getNeighbors(0).contains(1), "Старые вершины и рёбра должны остаться после изменения размера");
+        assertTrue(graph.getNeighbors(0).contains(1), "Старые вершины и рёбра должны "
+                + "остаться после изменения размера");
         assertTrue(graph.getNeighbors(1).isEmpty(), "Вершина 1 не должна иметь соседей");
     }
 

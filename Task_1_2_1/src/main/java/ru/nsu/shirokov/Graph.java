@@ -18,5 +18,6 @@ public interface Graph {
 
     String toString();
     // Представление графа в строку
-    boolean equals(Object obj);  // Операция сравнения на равенство
+    boolean equals(Object obj);
+    // Операция сравнения на равенство
 }

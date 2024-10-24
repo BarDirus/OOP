@@ -1,9 +1,9 @@
 package ru.nsu.shirokov;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -102,14 +102,12 @@ public class AdjacencyListGraphTest {
     @Test
     public void testNotEquals() {
         AdjacencyListGraph otherGraph = new AdjacencyListGraph();
-        graph.addVertex(0);
-        graph.addVertex(1);
-        graph.addEdge(0, 1);
-
         otherGraph.addVertex(0);
         otherGraph.addVertex(2);
         otherGraph.addEdge(0, 2);
-
+        graph.addVertex(0);
+        graph.addVertex(1);
+        graph.addEdge(0, 1);
         assertNotEquals(graph, otherGraph, "Графы с разными вершинами "
                 + "или рёбрами не должны быть равны");
     }
