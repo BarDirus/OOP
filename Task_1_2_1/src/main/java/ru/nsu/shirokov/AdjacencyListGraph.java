@@ -3,7 +3,11 @@ package ru.nsu.shirokov;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class AdjacencyListGraph implements Graph {
     private final Map<Integer, List<Integer>> adjList = new HashMap<>();
@@ -44,7 +48,9 @@ public class AdjacencyListGraph implements Graph {
             String[] firstLine = br.readLine().split(" ");
             int vertices = Integer.parseInt(firstLine[0]);
 
-            for (int i = 0; i < vertices; i++) addVertex(i);
+            for (int i = 0; i < vertices; i++) {
+                addVertex(i);
+            }
 
             String line;
             while ((line = br.readLine()) != null) {

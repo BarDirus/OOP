@@ -97,6 +97,6 @@ public class AdjacencyMatrixGraph implements Graph {
             newMatrix[i] = Arrays.copyOf(matrix[i],newSize);
         }
         matrix = newMatrix;
-        size=newSize;
+        size = newSize;
     }
 }
