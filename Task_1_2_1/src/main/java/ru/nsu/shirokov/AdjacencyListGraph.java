@@ -67,7 +67,7 @@ public class AdjacencyListGraph implements Graph {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()){
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
         AdjacencyListGraph other = (AdjacencyListGraph) obj;
