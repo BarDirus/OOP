@@ -1,13 +1,19 @@
 package ru.nsu.shirokov;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 public class AdjacencyMatrixGraphTest {
     private AdjacencyMatrixGraph graph;
@@ -64,6 +70,7 @@ public class AdjacencyMatrixGraphTest {
                         "[0, 0, 0, 0, 0]]";
         assertEquals(expected, graph.toString());
     }
+
     @Test
     public void testAddVertex() {
         graph.addVertex(5);

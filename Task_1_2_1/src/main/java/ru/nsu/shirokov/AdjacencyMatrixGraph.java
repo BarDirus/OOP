@@ -3,7 +3,9 @@ package ru.nsu.shirokov;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class AdjacencyMatrixGraph implements Graph {
     public int[][] matrix;
@@ -52,6 +54,7 @@ public class AdjacencyMatrixGraph implements Graph {
         }
         return neighbors;
     }
+
     @Override
     public void readFromFile(String filename) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -91,7 +94,7 @@ public class AdjacencyMatrixGraph implements Graph {
     public void resizeMatrix(int newSize) {
         int[][] newMatrix = new int[newSize][newSize];
         for (int i = 0; i < matrix.length; i++) {
-            newMatrix[i]=Arrays.copyOf(matrix[i],newSize);
+            newMatrix[i] = Arrays.copyOf(matrix[i],newSize);
         }
         matrix = newMatrix;
         size=newSize;

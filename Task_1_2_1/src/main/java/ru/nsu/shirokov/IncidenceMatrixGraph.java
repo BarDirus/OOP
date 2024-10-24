@@ -50,6 +50,7 @@ public class IncidenceMatrixGraph implements Graph {
         return neighbors;
     }
 
+    @Override
     public void readFromFile(String filename) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String[] firstLine = br.readLine().split(" ");

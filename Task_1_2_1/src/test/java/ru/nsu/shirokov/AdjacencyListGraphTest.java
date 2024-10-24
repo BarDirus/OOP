@@ -1,6 +1,10 @@
 package ru.nsu.shirokov;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.FileWriter;
@@ -8,6 +12,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+
+
 
 public class AdjacencyListGraphTest {
     private AdjacencyListGraph graph;
@@ -69,6 +75,7 @@ public class AdjacencyListGraphTest {
         String expected = "{0=[1, 2], 1=[], 2=[]}";
         assertEquals(expected, graph.toString());
     }
+
     @Test
     public void testRemoveVertex() {
         graph.addVertex(0);
