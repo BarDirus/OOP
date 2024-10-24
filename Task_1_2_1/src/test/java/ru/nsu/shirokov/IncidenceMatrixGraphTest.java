@@ -53,7 +53,7 @@ public class IncidenceMatrixGraphTest {
 
         graph.readFromFile(file.toString());
         assertEquals(List.of(1), graph.getNeighbors(0));
-        assertEquals(List.of(0,2), graph.getNeighbors(1));
+        assertEquals(List.of(0, 2), graph.getNeighbors(1));
     }
 
     @Test
@@ -61,11 +61,11 @@ public class IncidenceMatrixGraphTest {
         graph.addEdge(0, 1);
         graph.addEdge(1, 2);
         String expected =
-                "0 1 0 0 0 \n" +
-                        "1 0 1 0 0 \n" +
-                        "0 1 0 0 0 \n" +
-                        "0 0 0 0 0 \n" +
-                        "0 0 0 0 0 \n";
+                "0 1 0 0 0 \n"
+                        + "1 0 1 0 0 \n" 
+                        + "0 1 0 0 0 \n"
+                        + "0 0 0 0 0 \n"
+                        + "0 0 0 0 0 \n";
         assertEquals(expected, graph.toString());
     }
 }

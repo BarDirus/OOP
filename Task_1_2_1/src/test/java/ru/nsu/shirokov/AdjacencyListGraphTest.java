@@ -89,15 +89,14 @@ public class AdjacencyListGraphTest {
     @Test
     public void testEquals() {
         AdjacencyListGraph otherGraph = new AdjacencyListGraph();
-        graph.addVertex(0);
-        graph.addVertex(1);
-        graph.addEdge(0, 1);
-
         otherGraph.addVertex(0);
         otherGraph.addVertex(1);
         otherGraph.addEdge(0, 1);
-
-        assertEquals(graph, otherGraph, "Графы с одинаковыми вершинами и рёбрами должны быть равны");
+        graph.addVertex(0);
+        graph.addVertex(1);
+        graph.addEdge(0, 1);
+        assertEquals(graph, otherGraph, "Графы с одинаковыми вершинами "
+                + "и рёбрами должны быть равны");
     }
 
     @Test
@@ -111,7 +110,8 @@ public class AdjacencyListGraphTest {
         otherGraph.addVertex(2);
         otherGraph.addEdge(0, 2);
 
-        assertNotEquals(graph, otherGraph, "Графы с разными вершинами или рёбрами не должны быть равны");
+        assertNotEquals(graph, otherGraph, "Графы с разными вершинами "
+                + "или рёбрами не должны быть равны");
     }
 }
 
