@@ -64,4 +64,48 @@ public class AdjacencyMatrixGraphTest {
                         "[0, 0, 0, 0, 0]]";
         assertEquals(expected, graph.toString());
     }
+    @Test
+    public void testAddVertex() {
+        graph.addVertex(5);
+        assertEquals(List.of(), graph.getNeighbors(5), "Добавленная вершина не должна иметь соседей");
+    }
+
+    @Test
+    public void testRemoveVertex() {
+        graph.addEdge(0, 1);
+        graph.addVertex(2);
+        graph.addEdge(0, 2);
+        graph.removeVertex(2);
+
+        assertTrue(graph.getNeighbors(0).contains(1), "Вершина 1 должна оставаться соседней");
+        assertFalse(graph.getNeighbors(0).contains(2), "Вершина 2 должна быть удалена");
+    }
+
+    @Test
+    public void testResizeMatrix() {
+        graph.addEdge(0, 1);
+        graph.resizeMatrix(6);
+
+        assertTrue(graph.getNeighbors(0).contains(1), "Старые вершины и рёбра должны остаться после изменения размера");
+        assertTrue(graph.getNeighbors(1).isEmpty(), "Вершина 1 не должна иметь соседей");
+    }
+
+    @Test
+    public void testEquals() {
+        AdjacencyMatrixGraph otherGraph = new AdjacencyMatrixGraph(5);
+        graph.addEdge(0, 1);
+        otherGraph.addEdge(0, 1);
+
+        assertEquals(graph, otherGraph, "Графы с одинаковыми рёбрами должны быть равны");
+    }
+
+    @Test
+    public void testNotEquals() {
+        AdjacencyMatrixGraph otherGraph = new AdjacencyMatrixGraph(5);
+        graph.addEdge(0, 1);
+        otherGraph.addEdge(1, 2);
+
+        assertNotEquals(graph, otherGraph, "Графы с разными рёбрами не должны быть равны");
+    }
+
 }

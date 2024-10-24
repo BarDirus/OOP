@@ -69,4 +69,43 @@ public class AdjacencyListGraphTest {
         String expected = "{0=[1, 2], 1=[], 2=[]}";
         assertEquals(expected, graph.toString());
     }
+    @Test
+    public void testRemoveVertex() {
+        graph.addVertex(0);
+        graph.addVertex(1);
+        graph.addEdge(0, 1);
+        graph.removeVertex(1);
+
+        assertTrue(graph.getNeighbors(0).isEmpty(), "Вершина 1 должна быть удалена");
+        assertFalse(graph.getNeighbors(1).contains(0), "Удалённая вершина не должна существовать");
+    }
+
+    @Test
+    public void testEquals() {
+        AdjacencyListGraph otherGraph = new AdjacencyListGraph();
+        graph.addVertex(0);
+        graph.addVertex(1);
+        graph.addEdge(0, 1);
+
+        otherGraph.addVertex(0);
+        otherGraph.addVertex(1);
+        otherGraph.addEdge(0, 1);
+
+        assertEquals(graph, otherGraph, "Графы с одинаковыми вершинами и рёбрами должны быть равны");
+    }
+
+    @Test
+    public void testNotEquals() {
+        AdjacencyListGraph otherGraph = new AdjacencyListGraph();
+        graph.addVertex(0);
+        graph.addVertex(1);
+        graph.addEdge(0, 1);
+
+        otherGraph.addVertex(0);
+        otherGraph.addVertex(2);
+        otherGraph.addEdge(0, 2);
+
+        assertNotEquals(graph, otherGraph, "Графы с разными вершинами или рёбрами не должны быть равны");
+    }
 }
+

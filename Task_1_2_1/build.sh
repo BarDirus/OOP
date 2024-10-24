@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Генерация документации с помощью javadoc
-javadoc -d doc src/main/java/ru/nsu/shirokov/BlackJack.java
+javadoc -d doc src/main/java/ru/nsu/shirokov/*
 
 # Проверяем, завершилась ли команда успешно
 if [ $? -ne 0 ]; then
@@ -11,8 +11,8 @@ if [ $? -ne 0 ]; then
 fi
 
 # 2. Компиляция исходного кода
-javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/BlackJack.java  -d ./build/classes/java/main
-javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/BlackJack.java ./src/test/java/ru/nsu/shirokov/BJTest.java  -d ./build/classes/java/test
+javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/*  -d ./build/classes/java/main
+javac -cp libs/junit-platform-console-standalone-1.11.0.jar ./src/main/java/ru/nsu/shirokov/* ./src/test/java/ru/nsu/shirokov/*  -d ./build/classes/java/test
 # Проверяем, завершилась ли компиляция успешно
 if [ $? -ne 0 ]; then
   echo "Ошибка при компиляции исходного кода"

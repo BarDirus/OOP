@@ -16,10 +16,9 @@ public class AdjacencyMatrixGraph implements Graph {
 
     @Override
     public void addVertex(int vertex) {
-        if (vertex >= matrix.length) {
+        if (vertex >= size) {
             resizeMatrix(vertex + 1);
         }
-        size++;
     }
 
     @Override
@@ -89,11 +88,12 @@ public class AdjacencyMatrixGraph implements Graph {
         return Arrays.deepToString(matrix);
     }
 
-    private void resizeMatrix(int newSize) {
+    public void resizeMatrix(int newSize) {
         int[][] newMatrix = new int[newSize][newSize];
         for (int i = 0; i < matrix.length; i++) {
-            System.arraycopy(matrix[i], 0, newMatrix[i], 0, matrix[i].length);
+            newMatrix[i]=Arrays.copyOf(matrix[i],newSize);
         }
         matrix = newMatrix;
+        size=newSize;
     }
 }
