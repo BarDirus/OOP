@@ -62,7 +62,7 @@ public class AdjacencyMatrixGraph implements Graph {
             int vertices = Integer.parseInt(firstLine[0]);
 
             for (int i = 0; i < vertices; i++) {
-                if (i>size) {
+                if (i > size) {
                     addVertex(i);
                 }
             }

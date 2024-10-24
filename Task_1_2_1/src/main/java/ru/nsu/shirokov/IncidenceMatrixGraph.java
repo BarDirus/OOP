@@ -27,7 +27,7 @@ public class IncidenceMatrixGraph implements Graph {
     public void addEdge(int from, int to) {
         matrix[from][to] = true;
         matrix[to][from] = true;
-            }
+    }
 
 
     @Override
@@ -48,8 +48,8 @@ public class IncidenceMatrixGraph implements Graph {
         for (int i = 0; i < edgeCount; i++) {
             if (matrix[vertex][i]) {
                 neighbors.add(i);
-                }
             }
+        }
 
         return neighbors;
     }
