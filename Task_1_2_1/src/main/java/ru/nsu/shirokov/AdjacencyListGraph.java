@@ -5,53 +5,37 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class AdjacencyMatrixGraph implements Graph {
-    public int[][] matrix;
-    private int size;
-
-    public AdjacencyMatrixGraph(int initialSize) {
-        matrix = new int[initialSize][initialSize];
-        size = initialSize;
-    }
+public class AdjacencyListGraph implements Graph {
+    private final Map<Integer, List<Integer>> adjList = new HashMap<>();
 
     @Override
     public void addVertex(int vertex) {
-        if (vertex >= matrix.length) {
-            resizeMatrix(vertex + 1);
-        }
-        size++;
+        adjList.putIfAbsent(vertex, new ArrayList<>());
     }
 
     @Override
     public void removeVertex(int vertex) {
-        if (vertex < size) {
-            for (int i = 0; i < size; i++) {
-                matrix[vertex][i] = 0;
-                matrix[i][vertex] = 0;
-            }
-            size--;
-        }
+        adjList.remove(vertex);
+        adjList.values().forEach(list -> list.remove(Integer.valueOf(vertex)));
     }
 
     @Override
     public void addEdge(int from, int to) {
-        matrix[from][to] = 1;
+        addVertex(from);
+        addVertex(to);
+        adjList.get(from).add(to);
     }
 
     @Override
     public void removeEdge(int from, int to) {
-        matrix[from][to] = 0;
+        if (adjList.containsKey(from)) {
+            adjList.get(from).remove(Integer.valueOf(to));
+        }
     }
 
     @Override
     public List<Integer> getNeighbors(int vertex) {
-        List<Integer> neighbors = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            if (matrix[vertex][i] == 1) {
-                neighbors.add(i);
-            }
-        }
-        return neighbors;
+        return adjList.getOrDefault(vertex, Collections.emptyList());
     }
 
     @Override
@@ -71,26 +55,16 @@ public class AdjacencyMatrixGraph implements Graph {
             }
         }
     }
-
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        AdjacencyMatrixGraph other = (AdjacencyMatrixGraph) obj;
-        return Arrays.deepEquals(matrix, other.matrix);
+        AdjacencyListGraph other = (AdjacencyListGraph) obj;
+        return adjList.equals(other.adjList);
     }
 
     @Override
     public String toString() {
-        return Arrays.deepToString(matrix);
-    }
-
-    private void resizeMatrix(int newSize) {
-        int[][] newMatrix = new int[newSize][newSize];
-        for (int i = 0; i < matrix.length; i++) {
-            System.arraycopy(matrix[i], 0, newMatrix[i], 0, matrix[i].length);
-        }
-        matrix = newMatrix;
+        return adjList.toString();
     }
 }
