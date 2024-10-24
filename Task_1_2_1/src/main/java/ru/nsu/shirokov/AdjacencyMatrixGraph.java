@@ -80,8 +80,12 @@ public class AdjacencyMatrixGraph implements Graph {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
         AdjacencyMatrixGraph other = (AdjacencyMatrixGraph) obj;
         return Arrays.deepEquals(matrix, other.matrix);
     }
@@ -94,7 +98,7 @@ public class AdjacencyMatrixGraph implements Graph {
     public void resizeMatrix(int newSize) {
         int[][] newMatrix = new int[newSize][newSize];
         for (int i = 0; i < matrix.length; i++) {
-            newMatrix[i] = Arrays.copyOf(matrix[i],newSize);
+            newMatrix[i] = Arrays.copyOf(matrix[i], newSize);
         }
         matrix = newMatrix;
         size = newSize;
