@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Collections;
 /**
  *Граф на основе матрицы смежности.
  */
@@ -105,5 +107,38 @@ public class AdjacencyMatrixGraph implements Graph {
         }
         matrix = newMatrix;
         size = newSize;
+    }
+    @Override
+    public List<Integer> topologicalSort() {
+        List<Integer> sorted = new ArrayList<>();
+        Set<Integer> visited = new HashSet<>();
+        Set<Integer> visiting = new HashSet<>();
+
+        for (int vertex = 0; vertex < size; vertex++) {
+            if (!visited.contains(vertex)) {
+                if (!dfs(vertex, visited, visiting, sorted)) {
+                    throw new IllegalStateException("Граф содержит цикл, топологическая сортировка невозможна");
+                }
+            }
+        }
+
+        Collections.reverse(sorted);
+        return sorted;
+    }
+
+    private boolean dfs(int vertex, Set<Integer> visited, Set<Integer> visiting, List<Integer> sorted) {
+        visiting.add(vertex);
+        for (int neighbor = 0; neighbor < size; neighbor++) {
+            if (matrix[vertex][neighbor] == 1) {
+                if (visiting.contains(neighbor)) return false;
+                if (!visited.contains(neighbor)) {
+                    if (!dfs(neighbor, visited, visiting, sorted)) return false;
+                }
+            }
+        }
+        visiting.remove(vertex);
+        visited.add(vertex);
+        sorted.add(vertex);
+        return true;
     }
 }

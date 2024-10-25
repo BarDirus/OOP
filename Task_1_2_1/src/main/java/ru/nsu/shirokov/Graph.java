@@ -23,4 +23,6 @@ public interface Graph {
     // Представление графа в строку
     boolean equals(Object obj);
     // Операция сравнения на равенство
+    List<Integer> topologicalSort();
+
 }

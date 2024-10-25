@@ -8,7 +8,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Set;
+import java.util.HashSet;
 /**
  *Граф на основе списка смежности.
  */
@@ -81,4 +82,38 @@ public class AdjacencyListGraph implements Graph {
     public String toString() {
         return adjList.toString();
     }
+
+    @Override
+    public List<Integer> topologicalSort() {
+        List<Integer> sorted = new ArrayList<>();
+        Set<Integer> visited = new HashSet<>();
+        Set<Integer> visiting = new HashSet<>();
+
+
+        for (Integer vertex : adjList.keySet()) {
+            if (!visited.contains(vertex)) {
+                if (!dfs(vertex, visited, visiting, sorted)) {
+                    throw new IllegalStateException("Граф содержит цикл, топологическая сортировка невозможна");
+                }
+            }
+        }
+
+        Collections.reverse(sorted); // Переворачиваем порядок для корректной сортировки
+        return sorted;
+    }
+
+    private boolean dfs(Integer vertex, Set<Integer> visited, Set<Integer> visiting, List<Integer> sorted) {
+        visiting.add(vertex);
+        for (Integer neighbor : adjList.getOrDefault(vertex, Collections.emptyList())) {
+            if (visiting.contains(neighbor)) return false;
+            if (!visited.contains(neighbor)) {
+                if (!dfs(neighbor, visited, visiting, sorted)) return false;
+            }
+        }
+        visiting.remove(vertex);
+        visited.add(vertex);
+        sorted.add(vertex);
+        return true;
+    }
+
 }
