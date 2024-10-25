@@ -113,9 +113,13 @@ public class IncidenceMatrixGraph implements Graph {
             if (matrix[vertex][edge] == true) {
                 for (int neighbor = 0; neighbor < vertexCount; neighbor++) {
                     if (neighbor != vertex && matrix[neighbor][edge] == false) {
-                        if (visiting.contains(neighbor)) return false;
+                        if (visiting.contains(neighbor)){
+                            return false;
+                        }
                         if (!visited.contains(neighbor)) {
-                            if (!dfs(neighbor, visited, visiting, sorted)) return false;
+                            if (!dfs(neighbor, visited, visiting, sorted)) {
+                                return false;
+                            }
                         }
                     }
                 }
