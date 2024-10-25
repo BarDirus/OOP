@@ -106,7 +106,8 @@ public class IncidenceMatrixGraph implements Graph {
         return sorted;
     }
 
-    private boolean dfs(int vertex, Set<Integer> visited, Set<Integer> visiting, List<Integer> sorted) {
+    private boolean dfs(int vertex, Set<Integer> visited, Set<Integer> visiting,
+                        List<Integer> sorted) {
         visiting.add(vertex);
         for (int edge = 0; edge < edgeCount; edge++) {
             if (matrix[vertex][edge] == true) {

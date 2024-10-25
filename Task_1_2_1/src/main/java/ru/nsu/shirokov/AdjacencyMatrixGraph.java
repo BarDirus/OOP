@@ -128,15 +128,16 @@ public class AdjacencyMatrixGraph implements Graph {
         return sorted;
     }
 
-    private boolean dfs(int vertex, Set<Integer> visited, Set<Integer> visiting, List<Integer> sorted) {
+    private boolean dfs(int vertex, Set<Integer> visited, Set<Integer> visiting,
+                        List<Integer> sorted) {
         visiting.add(vertex);
         for (int neighbor = 0; neighbor < size; neighbor++) {
             if (matrix[vertex][neighbor] == 1) {
-                if (visiting.contains(neighbor)){
+                if (visiting.contains(neighbor)) {
                     return false;
                 }
                 if (!visited.contains(neighbor)) {
-                    if (!dfs(neighbor, visited, visiting, sorted)){
+                    if (!dfs(neighbor, visited, visiting, sorted)) {
                         return false;
                     }
                 }
