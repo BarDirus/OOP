@@ -32,7 +32,7 @@ public class GraphTopologicalSortTest {
         List<Integer> sorted = graph.topologicalSort();
         assertEquals(List.of(0, 1, 2, 3), sorted, "Сортировка не соответствует ожидаемому порядку");
     }
-    
+
     @Test
     public void testTopologicalSortWithCycleThrowsException() {
         Graph graph = new AdjacencyListGraph();

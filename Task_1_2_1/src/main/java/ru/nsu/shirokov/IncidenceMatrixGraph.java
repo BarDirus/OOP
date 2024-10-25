@@ -32,13 +32,8 @@ public class IncidenceMatrixGraph implements Graph {
 
     @Override
     public void addEdge(int from, int to) {
-        for (int i = 0; i < edgeCount; i++) {
-            if (!matrix[from][i] && !matrix[to][i]) {
-                matrix[from][i] = true;
-                matrix[to][i] = true;
-                break;
-            }
-        }
+        matrix[from][to]=true;
+        matrix[to][from]=true;
     }
 
 
