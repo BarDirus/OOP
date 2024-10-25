@@ -119,7 +119,8 @@ public class AdjacencyMatrixGraph implements Graph {
         for (int vertex = 0; vertex < size; vertex++) {
             if (!visited.contains(vertex)) {
                 if (!dfs(vertex, visited, visiting, sorted)) {
-                    throw new IllegalStateException("Граф содержит цикл, топологическая сортировка невозможна");
+                    throw new IllegalStateException("Граф содержит цикл, "
+                            + "топологическая сортировка невозможна");
                 }
             }
         }

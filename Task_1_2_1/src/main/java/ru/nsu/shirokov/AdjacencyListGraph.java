@@ -94,7 +94,8 @@ public class AdjacencyListGraph implements Graph {
         for (Integer vertex : adjList.keySet()) {
             if (!visited.contains(vertex)) {
                 if (!dfs(vertex, visited, visiting, sorted)) {
-                    throw new IllegalStateException("Граф содержит цикл, топологическая сортировка невозможна");
+                    throw new IllegalStateException("Граф содержит цикл, "
+                            + "топологическая сортировка невозможна");
                 }
             }
         }
