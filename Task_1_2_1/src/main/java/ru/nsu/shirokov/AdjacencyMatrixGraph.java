@@ -10,7 +10,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 /**
  *Граф на основе матрицы смежности.
  */
@@ -110,6 +109,7 @@ public class AdjacencyMatrixGraph implements Graph {
         matrix = newMatrix;
         size = newSize;
     }
+
     @Override
     public List<Integer> topologicalSort() {
         List<Integer> sorted = new ArrayList<>();

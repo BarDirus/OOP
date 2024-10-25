@@ -31,8 +31,8 @@ public class IncidenceMatrixGraph implements Graph {
 
     @Override
     public void addEdge(int from, int to) {
-        matrix[from][to]=true;
-        matrix[to][from]=true;
+        matrix[from][to] = true;
+        matrix[to][from] = true;
     }
 
 
@@ -97,7 +97,8 @@ public class IncidenceMatrixGraph implements Graph {
         for (int vertex = 0; vertex < vertexCount; vertex++) {
             if (!visited.contains(vertex)) {
                 if (!dfs(vertex, visited, visiting, sorted)) {
-                    throw new IllegalStateException("Граф содержит цикл, топологическая сортировка невозможна");
+                    throw new IllegalStateException("Граф содержит цикл,"
+                            + " топологическая сортировка невозможна");
                 }
             }
         }

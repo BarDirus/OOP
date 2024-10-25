@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 public class GraphTopologicalSortTest {
+
     @Test
     public void testTopologicalSortAdjacencyListGraph() {
         Graph graph = new AdjacencyListGraph();
@@ -32,6 +33,7 @@ public class GraphTopologicalSortTest {
         List<Integer> sorted = graph.topologicalSort();
         assertEquals(List.of(0, 1, 2, 3), sorted, "Сортировка не соответствует ожидаемому порядку");
     }
+
     @Test
     public void testTopologicalSortWithCycleThrowsException() {
         Graph graph = new IncidenceMatrixGraph(3, 3);
