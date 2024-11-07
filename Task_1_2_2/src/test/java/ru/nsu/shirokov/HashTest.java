@@ -1,9 +1,13 @@
 package ru.nsu.shirokov;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class HashTableTest {
     private HashTable<String, Integer> hashTable;
@@ -69,11 +73,13 @@ class HashTableTest {
         otherTable.put("apple", 1);
         otherTable.put("banana", 2);
 
-        assertEquals(hashTable.hashCode(), otherTable.hashCode(), "Hash codes should match for equal tables");
+        assertEquals(hashTable.hashCode(), otherTable.hashCode(), "Hash codes should match "
+                + "for equal tables");
 
         // Modify one table and check if hash codes differ
         hashTable.put("cherry", 3);
-        assertNotEquals(hashTable.hashCode(), otherTable.hashCode(), "Hash codes should differ for non-equal tables");
+        assertNotEquals(hashTable.hashCode(), otherTable.hashCode(), "Hash codes should differ"
+                + " for non-equal tables");
     }
 
     @Test

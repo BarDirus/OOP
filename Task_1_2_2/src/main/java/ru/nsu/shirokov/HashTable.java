@@ -7,6 +7,9 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * Реализация хэш-таблицы.
+ */
 public class HashTable<K, V> implements Iterable<HashTable<K, V>.Entry> {
     private ArrayList<LinkedList<Entry>> table;
     private int size;
@@ -33,7 +36,9 @@ public class HashTable<K, V> implements Iterable<HashTable<K, V>.Entry> {
         return (key == null) ? 0 : Math.abs(key.hashCode() % capacity);
     }
 
-    // Вложенный класс для пар (ключ-значение)
+    /**
+     * Вложенный класс для пар (ключ-значение).
+     */
     public class Entry {
         private final K key;
         private V value;
@@ -57,8 +62,12 @@ public class HashTable<K, V> implements Iterable<HashTable<K, V>.Entry> {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             Entry entry = (Entry) o;
             return Objects.equals(key, entry.key) && Objects.equals(value, entry.value);
         }
@@ -75,7 +84,7 @@ public class HashTable<K, V> implements Iterable<HashTable<K, V>.Entry> {
     }
 
     /**
-     *  1. Добавление пары ключ-значение
+     *  1. Добавление пары ключ-значение.
      */
     public void put(K key, V value) {
         int index = hash(key);
@@ -98,7 +107,7 @@ public class HashTable<K, V> implements Iterable<HashTable<K, V>.Entry> {
     }
 
     /**
-     * 2. Поиск значения по ключу
+     * 2. Поиск значения по ключу.
      */
     public V get(K key) {
         int index = hash(key);
@@ -113,7 +122,7 @@ public class HashTable<K, V> implements Iterable<HashTable<K, V>.Entry> {
     }
 
     /**
-     * 3. Удаление пары ключ-значение
+     * 3. Удаление пары ключ-значение.
      */
     public boolean remove(K key) {
         int index = hash(key);
@@ -133,14 +142,14 @@ public class HashTable<K, V> implements Iterable<HashTable<K, V>.Entry> {
     }
 
     /**
-     * 4. Проверка наличия ключа
+     * 4. Проверка наличия ключа.
      */
     public boolean containsKey(K key) {
         return get(key) != null;
     }
 
     /**
-     * 5. Обновление значения по ключу
+     * 5. Обновление значения по ключу.
      */
     public void update(K key, V newValue) {
         int index = hash(key);
@@ -155,12 +164,16 @@ public class HashTable<K, V> implements Iterable<HashTable<K, V>.Entry> {
     }
 
     /**
-     * 6. Перегрузка equals для сравнения с другой таблицей
+     * 6. Перегрузка equals для сравнения с другой таблицей.
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         HashTable<?, ?> hashTable = (HashTable<?, ?>) o;
         return size == hashTable.size && table.equals(hashTable.table);
     }
