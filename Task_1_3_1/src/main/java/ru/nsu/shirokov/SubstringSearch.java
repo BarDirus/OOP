@@ -7,11 +7,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Реализация поиска подстроки
+ * */
 public class SubstringSearch {
-    public static List<Long> searchSubstringInFile(String filename, String substring) throws IOException {
+    public static List<Long> searchSubstringInFile(String filename, String substring)
+            throws IOException {
         List<Long> indices = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename, StandardCharsets.UTF_8))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename,
+                StandardCharsets.UTF_8))) {
             int bufferSize = 4096;
             char[] buffer = new char[bufferSize];
             int substringLength = substring.codePointCount(0, substring.length());
@@ -41,7 +45,8 @@ public class SubstringSearch {
                     );
                     textBlock = new StringBuilder(new String(suffix, 0, suffix.length));
                 } else {
-                    textBlock = new StringBuilder(new String(textCodePoints, 0, textCodePoints.length));
+                    textBlock = new StringBuilder(new String(textCodePoints, 0,
+                            textCodePoints.length));
                 }
             }
         }
