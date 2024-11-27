@@ -1,7 +1,9 @@
 package ru.nsu.shirokov;
 
 import java.util.*;
-
+/**
+ * Реализация зачетной книжки.
+ * */
 public class StudentGradebook {
     private final String studentName;
     private final boolean isBudget; // true - бюджет, false - платно
@@ -40,9 +42,13 @@ public class StudentGradebook {
 
     // 2. Возможность перевода на бюджет
     public boolean canTransferToBudget() {
-        if (isBudget) return false;
+        if (isBudget) {
+            return false;
+        }
         int sessionCount = semesters.size();
-        if (sessionCount < 2) return false;
+        if (sessionCount < 2) {
+            return false;
+        }
 
         // Берём последние две сессии
         List<Semester> lastTwoSemesters = semesters.subList(sessionCount - 2, sessionCount);
@@ -50,7 +56,8 @@ public class StudentGradebook {
         // Проверяем отсутствие неудовлетворительных оценок
         return lastTwoSemesters.stream()
                 .flatMap(s -> s.getSubjects().stream())
-                .noneMatch(sub -> sub.getGrade() == Grade.SATISFACTORY || sub.getGrade() == Grade.FAILED);
+                .noneMatch(sub -> sub.getGrade() == Grade.SATISFACTORY || sub.getGrade()
+                        == Grade.FAILED);
     }
 
     // 3. Возможность получения красного диплома
@@ -66,37 +73,41 @@ public class StudentGradebook {
 
         boolean hasNoSatisfactory = semesters.stream()
                 .flatMap(s -> s.getSubjects().stream())
-                .noneMatch(sub -> sub.getGrade() == Grade.SATISFACTORY || sub.getGrade() == Grade.FAILED);
+                .noneMatch(sub -> sub.getGrade() == Grade.SATISFACTORY || sub.getGrade()
+                        == Grade.FAILED);
 
-        return diplomaWorkPassed &&
-                (double) excellentCount / totalSubjects >= 0.75 &&
-                hasNoSatisfactory;
+        return diplomaWorkPassed
+                && (double) excellentCount / totalSubjects >= 0.75
+                && hasNoSatisfactory;
     }
 
     // 4. Возможность получения повышенной стипендии
     public boolean canGetIncreasedScholarship() {
-        if (!isBudget || semesters.isEmpty()) return false;
-
+        if (!isBudget || semesters.isEmpty()) {
+            return false;
+        }
         // Берём последний семестр
         Semester lastSemester = semesters.get(semesters.size() - 1);
 
         // Проверяем отсутствие неудовлетворительных оценок
         return lastSemester.getSubjects().stream()
-                .noneMatch(sub -> sub.getGrade() == Grade.SATISFACTORY || sub.getGrade() == Grade.FAILED) &&
-                lastSemester.getSubjects().stream()
+                .noneMatch(sub -> sub.getGrade() == Grade.SATISFACTORY || sub.getGrade()
+                        == Grade.FAILED)
+                && lastSemester.getSubjects().stream()
                         .filter(sub -> sub.isExam())
                         .allMatch(sub -> sub.getGrade() == Grade.EXCELLENT);
     }
 
     @Override
     public String toString() {
-        return "StudentGradebook{" +
-                "studentName='" + studentName + '\'' +
-                ", isBudget=" + isBudget +
-                ", semesters=" + semesters +
-                '}';
+        return "StudentGradebook{"
+                + "studentName='" + studentName + '\''
+                + ", isBudget=" + isBudget
+                + ", semesters=" + semesters
+                + '}';
     }
 }
+
 class Semester {
     private final int semesterNumber;
     private final List<Subject> subjects;
@@ -116,12 +127,13 @@ class Semester {
 
     @Override
     public String toString() {
-        return "Semester{" +
-                "semesterNumber=" + semesterNumber +
-                ", subjects=" + subjects +
-                '}';
+        return "Semester{"
+                + "semesterNumber=" + semesterNumber
+                + ", subjects=" + subjects
+                + '}';
     }
 }
+
 class Subject {
     private final String name;
     private final Grade grade;
@@ -151,11 +163,11 @@ class Subject {
 
     @Override
     public String toString() {
-        return "Subject{" +
-                "name='" + name + '\'' +
-                ", grade=" + grade +
-                ", isExam=" + isExam +
-                '}';
+        return "Subject{"
+                + "name='" + name + '\''
+                + ", grade=" + grade
+                + ", isExam=" + isExam
+                + '}';
     }
 }
 
@@ -194,7 +206,8 @@ class Main {
         System.out.println("Can transfer to budget: " + gradebook.canTransferToBudget());
         gradebook.setDiplomaWorkPassed(true);
         System.out.println("Can get honors diploma: " + gradebook.canGetHonorsDiploma());
-        System.out.println("Can get increased scholarship: " + gradebook.canGetIncreasedScholarship());
+        System.out.println("Can get increased scholarship: " +
+                gradebook.canGetIncreasedScholarship());
     }
 }
 

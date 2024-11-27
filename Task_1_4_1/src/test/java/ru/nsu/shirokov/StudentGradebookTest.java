@@ -1,11 +1,13 @@
 package ru.nsu.shirokov;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class StudentGradebookTest {
     private StudentGradebook gradebook;
@@ -27,10 +29,10 @@ class StudentGradebookTest {
 
     @Test
     void testCalculateGPA() {
-        double expectedGPA = (Grade.EXCELLENT.getNumericValue() +
-                Grade.GOOD.getNumericValue() +
-                Grade.EXCELLENT.getNumericValue() +
-                Grade.SATISFACTORY.getNumericValue()) / 4.0;
+        double expectedGPA = (Grade.EXCELLENT.getNumericValue()
+                + Grade.GOOD.getNumericValue()
+                + Grade.EXCELLENT.getNumericValue()
+                + Grade.SATISFACTORY.getNumericValue()) / 4.0;
 
         assertEquals(expectedGPA, gradebook.calculateGPA(), 0.01);
     }
