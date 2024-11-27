@@ -126,17 +126,16 @@ class StudentGradebookTest {
     @Test
     public void testCannotTransferToBudgetWithSatisfactoryGrades() {
         StudentGradebook gradebook = new StudentGradebook("John Doe", false);
-
         Semester semester1 = new Semester(1);
         semester1.addSubject(new Subject("Math", Grade.SATISFACTORY, true));
         semester1.addSubject(new Subject("Physics", Grade.GOOD, true));
         gradebook.addSemester(semester1);
-
         Semester semester2 = new Semester(2);
         semester2.addSubject(new Subject("Chemistry", Grade.EXCELLENT, true));
         semester2.addSubject(new Subject("English", Grade.GOOD, false));
         gradebook.addSemester(semester2);
 
-        assertFalse(gradebook.canTransferToBudget(), "Should not be eligible for transfer to budget with satisfactory grades.");
+        assertFalse(gradebook.canTransferToBudget(),
+                "Should not be eligible for transfer to budget with satisfactory grades.");
     }
 }
