@@ -21,6 +21,7 @@ public class StudentGradebook {
     public void addSemester(Semester semester) {
         semesters.add(semester);
     }
+
     public List<Semester> getSemesters() {
         return new ArrayList<>(semesters); // Возвращаем копию списка, чтобы избежать мутаций
     }
@@ -31,7 +32,9 @@ public class StudentGradebook {
         this.diplomaWorkPassed = passed;
     }
 
-    // 1. Текущий средний балл
+    /**
+     * Текущий средний балл.
+     */
     public double calculateGPA() {
         return semesters.stream()
                 .flatMap(s -> s.getSubjects().stream())
@@ -40,7 +43,9 @@ public class StudentGradebook {
                 .orElse(0.0);
     }
 
-    // 2. Возможность перевода на бюджет
+    /**
+     * Возможность перевода на бюджет.
+     */
     public boolean canTransferToBudget() {
         if (isBudget) {
             return false;
@@ -81,7 +86,9 @@ public class StudentGradebook {
                 && hasNoSatisfactory;
     }
 
-    // 4. Возможность получения повышенной стипендии
+    /**
+     * Возможность получения повышенной стипендии.
+     */
     public boolean canGetIncreasedScholarship() {
         if (!isBudget || semesters.isEmpty()) {
             return false;
@@ -191,23 +198,20 @@ enum Grade {
 class Main {
     public static void main(String[] args) {
         StudentGradebook gradebook = new StudentGradebook("John Doe", false);
-
         Semester semester1 = new Semester(1);
         semester1.addSubject(new Subject("Math", Grade.EXCELLENT, true));
         semester1.addSubject(new Subject("Physics", Grade.GOOD, true));
         gradebook.addSemester(semester1);
-
         Semester semester2 = new Semester(2);
         semester2.addSubject(new Subject("Chemistry", Grade.EXCELLENT, true));
         semester2.addSubject(new Subject("English", Grade.GOOD, false));
         gradebook.addSemester(semester2);
-
         System.out.println("GPA: " + gradebook.calculateGPA());
         System.out.println("Can transfer to budget: " + gradebook.canTransferToBudget());
         gradebook.setDiplomaWorkPassed(true);
         System.out.println("Can get honors diploma: " + gradebook.canGetHonorsDiploma());
-        System.out.println("Can get increased scholarship: " +
-                gradebook.canGetIncreasedScholarship());
+        System.out.println("Can get increased scholarship: "
+                + gradebook.canGetIncreasedScholarship());
     }
 }
 
