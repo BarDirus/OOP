@@ -1,6 +1,8 @@
 package ru.nsu.shirokov;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Реализация зачетной книжки.
  * */
@@ -10,6 +12,9 @@ public class StudentGradebook {
     private boolean diplomaWorkPassed; // true, если квалификационная работа сдана
     private final List<Semester> semesters;
 
+    /**
+     * Данные студента.
+     * */
     public StudentGradebook(String studentName, boolean isBudget) {
         this.studentName = studentName;
         this.isBudget = isBudget;
