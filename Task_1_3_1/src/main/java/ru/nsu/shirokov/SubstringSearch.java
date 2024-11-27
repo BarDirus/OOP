@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Реализация поиска подстроки
+ * Реализация поиска подстроки.
  * */
 public class SubstringSearch {
     public static List<Long> searchSubstringInFile(String filename, String substring)
@@ -27,7 +27,7 @@ public class SubstringSearch {
             while ((bytesRead = reader.read(buffer)) != -1) {
                 textBlock.append(buffer, 0, bytesRead);
                 int[] textCodePoints = textBlock.codePoints().toArray();
-                int position = kmpSearch(textCodePoints, pattern, prefixTable,0);
+                int position = kmpSearch(textCodePoints, pattern, prefixTable, 0);
                 while (position != -1) {
                     indices.add(bufferOffset + position);
                     position = kmpSearch(textCodePoints, pattern, prefixTable, position + 1);
@@ -52,6 +52,7 @@ public class SubstringSearch {
         }
         return indices;
     }
+
     private static int[] computePrefixFunction(int[] pattern) {
         int[] prefixTable = new int[pattern.length];
         int j = 0;
@@ -87,6 +88,9 @@ public class SubstringSearch {
         return -1;
     }
 
+    /**
+     * Main.
+     * */
     public static void main(String[] args) throws IOException {
         String filename = "largeTestFile3.txt";
         String substring = "𒀱";

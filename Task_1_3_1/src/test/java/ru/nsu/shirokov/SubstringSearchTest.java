@@ -12,6 +12,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Test.
+ * */
 public class SubstringSearchTest {
 
     private static final String TEST_FILE_NAME = "testFile.txt";
