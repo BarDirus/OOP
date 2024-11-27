@@ -11,6 +11,9 @@ import java.util.List;
  * Реализация поиска подстроки.
  * */
 public class SubstringSearch {
+    /**
+     * Реализация поиска подстроки.
+     * */
     public static List<Long> searchSubstringInFile(String filename, String substring)
             throws IOException {
         List<Long> indices = new ArrayList<>();

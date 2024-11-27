@@ -18,7 +18,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SubstringSearchTest {
 
     private static final String TEST_FILE_NAME = "testFile.txt";
-
+    /**
+     * Запуск перед тестами.
+     * */
     @BeforeEach
     public void setup() throws IOException {
         File testFile = new File(TEST_FILE_NAME);
@@ -33,7 +35,7 @@ public class SubstringSearchTest {
         writeToFile(TEST_FILE_NAME, content);
 
         List<Long> indices = SubstringSearch.searchSubstringInFile(TEST_FILE_NAME, "test");
-        assertEquals(List.of(10L,43L), indices);
+        assertEquals(List.of(10L, 43L), indices);
     }
 
     @Test
